@@ -1,4 +1,3 @@
 export const ROUTES : any = {
-    LOGIN : "/login"
-
+    LOGIN : "/login" 
 }
