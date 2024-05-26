@@ -12,11 +12,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule,ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { LoginService } from './login.service';
+import { ForgotComponent } from './components/forgot/forgot.component';
+import { ResetComponent } from './components/reset/reset.component';
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    ForgotComponent,
+    ResetComponent
   ],
   imports: [
     CommonModule,

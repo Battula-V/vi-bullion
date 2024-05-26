@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';  
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from "../login/login.service";
+import { ToastrService } from 'ngx-toastr';
+import { ApplicationContextService} from "../../shared/services/application-context.service";
+import { ApplicationContext } from "../../shared/models/application-context.model";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -16,19 +20,41 @@ export class LoginComponent {
     password : new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(10)])
 
   });
+  
+
+  applicationContextObj = new ApplicationContext();
 
 
-  constructor(private loginServiceObj : LoginService){
+
+  constructor(private loginServiceObj : LoginService ,
+              private toastr : ToastrService ,
+              private applicationContextServiceObj : ApplicationContextService,
+              private routerObj : Router
+            ){
 
     
 
   }
 
   login(){
-
-    console.log(this.loginGroup.value.email);
-    this.loginServiceObj.calling(this.loginGroup.value.email,this.loginGroup.value.password);
-
+    let dataOne =this.loginGroup.value;
+    console.log(typeof(dataOne));
+    console.log(dataOne);
+    console.log(dataOne.email);
+    console.log(dataOne.password);
+    this.loginServiceObj.login(dataOne.email,dataOne.password).subscribe(
+      (res : any) =>{
+        console.log(res);
+        this.toastr.success('loginSuccess', 'Success');
+        this.applicationContextObj.loginStatus=true;
+        this.applicationContextServiceObj.updateApplicationContext(this.applicationContextObj);
+        this.routerObj.navigate(['/home']);
+      },
+      (error : any)=>{
+        console.log(error);
+        this.toastr.error("loginFailed" , "Failed" );
+      }
+    );
   }
 
 

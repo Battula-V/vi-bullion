@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 html, body { height: 100%; }
 body {
      margin: 0; 
@@ -10,31 +10,57 @@ body {
 {
     margin-top: 5rem;
 }
-.card
-{
-    background-color: #fff !important;
-}
+// .card
+// {
+//     background-color: #fff !important;
+// }
+::ng-deep{
+
+
 mat-form-field
 {
-    .mat-mdc-text-field-wrapper {
-        border-bottom: 1px solid #000;
-    }
-    .mat-mdc-form-field-flex {
-        padding: 3px;
-    }
-    .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input {
-         color: #000;
-    }
+    // .mat-mdc-text-field-wrapper {
+    //     border-bottom: 1px solid #000;
+    // }
+    // .mat-mdc-form-field-flex {
+    //     padding: 3px;
+    // }
+    // .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input {
+    //      color: #000;
+    // }
     .mdc-text-field--filled:not(.mdc-text-field--disabled) {
         background-color: #fff !important;
     }
-    .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input {
-        color:#000 !important;
+    .mdc-text-field--focused
+    {
+        background-color: #fff !important;
     }
-    .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-floating-label, .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-floating-label--float-above {
-        color: #000 !important;
-    }
-    ::placeholder {
-        color: #000 !important;
-      }
+    // .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input {
+    //     color:#000 !important;
+    // }
+    // .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-floating-label, .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-floating-label--float-above {
+    //     color: #000 !important;
+    // }
+    // ::placeholder {
+    //     color: #000 !important;
+    //   }
 }
+}
+mat-icon
+{
+    color: #6652defa !important;
+}
+mat-hint
+{    
+    font-style: italic; 
+    color: #172feb;
+    font-weight: 500;
+}
+// .mdc-floating-label--required:not(.mdc-floating-label--hide-required-marker)::after {
+//      color: red;
+// }
+
+// .mat-mdc-raised-button:disabled {
+//     color: #504c4c !important;
+// }
+

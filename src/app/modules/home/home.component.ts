@@ -16,7 +16,7 @@ export class HomeComponent {
       (res : ApplicationContext) => {
         console.log(res.loginStatus);
         if(!res.loginStatus){
-          this.routerObj.navigate([ROUTES.LOGIN]);
+          //this.routerObj.navigate([ROUTES.LOGIN]);
         }
       }
     );

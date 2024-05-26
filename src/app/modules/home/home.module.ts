@@ -5,6 +5,8 @@ import { HomeRoutingModule } from "./home-routing.module";
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HomeRoutingModule,
     MatToolbarModule,
     MatIconModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatCardModule,
+    MatListModule
   ]
 })
 export class HomeModule { }

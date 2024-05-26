@@ -1,5 +1,5 @@
 <div fxLayout="column" fxFlex="100">
-    <div fxLayout="row" fxLayoutAlign="center">
+    <div fxLayout="row" fxLayoutAlign="center" class="mb-2">
         <img src="assets/images/logo.png" class="mt-5"/> 
     </div>
     <div fxLayout="row" fxLayoutAlign="center">     
@@ -15,26 +15,31 @@
                     <form [formGroup] = "loginGroup">
                         <div fxLayout="column" fxFlex="100">
                             <mat-form-field fxFlex="100">
-                                <mat-label>Enter email</mat-label>
+                                <mat-label>Email</mat-label>
                                 <input type="email" matInput placeholder="Enter email"  required formControlName="email" name="email">
-                                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                                <mat-hint>Hint</mat-hint>
+                                <mat-icon matSuffix>email</mat-icon>                                 
                             </mat-form-field>
 
                             <mat-form-field fxFlex="100">
-                                <mat-label>Enter password</mat-label>
+                                <mat-label>Password</mat-label>
                                 <input type="password" matInput placeholder="Enter password" required formControlName="password" name="password">
-                                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                                <mat-hint>Hint</mat-hint>
+                                <mat-icon matSuffix>lock</mat-icon>
+                                <mat-hint>Minimum 6-10 Characters</mat-hint>
                             </mat-form-field>
                         </div>
                     </form>
                 
             </mat-card-content>
             <mat-card-actions> 
-                <div fxLayout="row" fxLayoutAlign="center" fxFlex="100">                    
-                    <button type="submit" mat-raised-button color="primary" [disabled]="loginGroup.invalid"
-                    (click)="login()">Login</button>         
+                <div fxLayout="column" fxLayoutAlign="center" fxFlex="100">
+                    <div fxLayout="row" fxLayoutAlign="space-between" fxFlex="100" class="mx-1 my-1">                    
+                       <a routerLink="forgot-password">Forgot Password?</a>
+                       <a routerLink="reset-password">Reset Password</a>     
+                    </div>    
+                    <div fxLayout="row" fxLayoutAlign="center" fxFlex="100" class="my-1">                    
+                        <button type="submit" mat-raised-button color="primary" [disabled]="loginGroup.invalid"
+                        (click)="login()"  fxFlex="50">Login</button>         
+                    </div>    
                 </div>    
             </mat-card-actions>
         </mat-card>
