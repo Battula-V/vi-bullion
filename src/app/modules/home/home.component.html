@@ -29,37 +29,39 @@
                 <mat-list class="menu"> 
                     <mat-list-item>
                       <mat-icon matListItemIcon>home</mat-icon>
-                      <div matListItemTitle routerLinkActive="active" routerLink="/home">Dashboard</div>
+                      <div matListItemTitle routerLinkActive="active" routerLink="dashboard">Dashboard</div>
                     </mat-list-item>
                     <mat-divider></mat-divider> 
                     <mat-list-item>
                         <mat-icon matListItemIcon>account_balance</mat-icon>
-                        <div matListItemTitle routerLinkActive="active" routerLink="/kjh">Super Admin</div>
+                        <div matListItemTitle routerLinkActive="active" routerLink="super-admin">Super Admin</div>
                     </mat-list-item>
                     <mat-divider></mat-divider> 
                     <mat-list-item>
                         <mat-icon matListItemIcon>account_box</mat-icon>
-                        <div matListItemTitle>Admin</div>
+                        <div matListItemTitle routerLinkActive="active" routerLink="admin">Admin</div>
                     </mat-list-item>
                     <mat-divider></mat-divider> 
                     <mat-list-item>
                         <mat-icon matListItemIcon>card_travel</mat-icon>
-                        <div matListItemTitle>Department</div>
+                        <div matListItemTitle routerLinkActive="active" routerLink="department">Department</div>
                     </mat-list-item>
                     <mat-divider></mat-divider> 
                     <mat-list-item>
                         <mat-icon matListItemIcon>contacts</mat-icon>
-                        <div matListItemTitle>Employees</div>
+                        <div matListItemTitle routerLinkActive="active" routerLink="employees">Employees</div>
+                    </mat-list-item>                      
+                    <mat-divider></mat-divider> 
+                    <mat-list-item>
+                        <mat-icon matListItemIcon>contacts</mat-icon>
+                        <div matListItemTitle routerLinkActive="active" routerLink="designition">Designition</div>
                     </mat-list-item>             
                   </mat-list>
             </mat-card-content>
         </mat-card>
         <mat-card fxFlex="80" class="card-bg">
             <mat-card-content>
-                <mat-card>
-                    <mat-card-content>Dashboard</mat-card-content>
-                </mat-card>
-
+                <router-outlet></router-outlet>
             </mat-card-content>
         </mat-card>
     </div>
