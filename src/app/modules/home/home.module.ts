@@ -21,6 +21,9 @@ import { DesgnitionComponent } from './components/desgnition/desgnition.componen
 import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule } from "@angular/common/http";
 import { HomeService } from './home.service';
+import { MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+
 
 
 @NgModule({
@@ -48,7 +51,9 @@ import { HomeService } from './home.service';
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule,
+    MatTableModule
   ],
   providers:[
     HomeService
