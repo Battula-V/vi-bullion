@@ -12,7 +12,7 @@
                                 </mat-form-field>
                                 <mat-form-field  >
                                     <mat-label>Phone Number</mat-label>
-                                    <input matInput placeholder="Phone Numbe" formControlName="phoneNumber" required> 
+                                    <input matInput placeholder="Phone Number" formControlName="phoneNumber" required> 
                                 </mat-form-field>
                                 <mat-form-field >
                                     <mat-label>Email</mat-label>
@@ -22,6 +22,19 @@
                                     <mat-label>Password</mat-label>
                                     <input matInput placeholder="Password" formControlName="password" required> 
                                 </mat-form-field>
+
+                                <mat-form-field>
+                                  <mat-label>Designation</mat-label>
+                                  <mat-select formControlName="designition">
+                                    
+                                    <mat-option [value]="ArrayValue. designition" *ngFor="let ArrayValue of getDesignition">
+                                      {{ArrayValue. designition}}
+                                    </mat-option> 
+
+                                    <!-- <mat-option value="design">Design</mat-option> -->
+                                  </mat-select>     
+                              </mat-form-field>
+
                                 <mat-form-field>
                                     <mat-label>Status</mat-label>
                                     <mat-select formControlName="status">
@@ -42,7 +55,7 @@
   <mat-tab label="List Of Super Admins"> 
     <mat-card class="mt-1">
         <mat-card-content> 
-            <div class="mat-elevation-z8">
+            <div>
                 <table mat-table [dataSource]="dataSource">
               
                   <!--  id Column -->

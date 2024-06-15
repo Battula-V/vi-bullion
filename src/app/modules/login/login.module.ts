@@ -14,13 +14,15 @@ import { HttpClientModule } from "@angular/common/http";
 import { LoginService } from './login.service';
 import { ForgotComponent } from './components/forgot/forgot.component';
 import { ResetComponent } from './components/reset/reset.component';
+import { LoginMainComponent } from './components/login-main/login-main.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     ForgotComponent,
-    ResetComponent
+    ResetComponent,
+    LoginMainComponent
   ],
   imports: [
     CommonModule,

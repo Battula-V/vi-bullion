@@ -16,7 +16,7 @@ export class EmployeesComponent implements AfterViewInit,OnInit{
     phoneNumber : new FormControl('',[Validators.required , Validators.minLength(10) , Validators.maxLength(10)]),
     email : new FormControl('',[Validators.required, Validators.email, Validators.maxLength(30)]),
     password : new FormControl('',[Validators.required , Validators.minLength(6), Validators.maxLength(28)]),
-    designation : new FormControl('',[Validators.required]),
+    designition : new FormControl('',[Validators.required]),
     status : new FormControl('',[Validators.required]) 
   });
 
@@ -25,6 +25,9 @@ export class EmployeesComponent implements AfterViewInit,OnInit{
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
+  public getDesignition:any = [
+
+  ];
   constructor(private homeServiceObj:HomeService){
 
   }
@@ -37,7 +40,7 @@ export class EmployeesComponent implements AfterViewInit,OnInit{
                     "role":"Employee",
                     "email":addEmployeeFormStore.email,
                     "password":addEmployeeFormStore.password, 
-                    "designation":addEmployeeFormStore.designation,                  
+                    "designition":addEmployeeFormStore.designition,                  
                     "status":addEmployeeFormStore.status
                   };
     this.homeServiceObj.usersAddApi(employeeAdd).subscribe(
@@ -45,6 +48,15 @@ export class EmployeesComponent implements AfterViewInit,OnInit{
         console.log(response);
       }
     );
+
+    
+    this.homeServiceObj.usersGetApi("Employee").subscribe(
+      (response:any)=>{
+        console.log(response);
+        this.dataSource = new MatTableDataSource<any>(response);
+      }
+    );
+
   }
 
 
@@ -53,6 +65,13 @@ export class EmployeesComponent implements AfterViewInit,OnInit{
       (response:any)=>{
         console.log(response);
         this.dataSource = new MatTableDataSource<any>(response);
+      }
+    );
+
+    this.homeServiceObj.designitionGetApi().subscribe(
+      (res:any)=>{
+        this.getDesignition=res;
+        console.log(this.getDesignition);
       }
     );
   }

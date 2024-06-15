@@ -20,6 +20,7 @@ export class SuperAdminComponent {
     phoneNumber : new FormControl('',[Validators.required , Validators.minLength(10) , Validators.maxLength(10)]),
     email : new FormControl('',[Validators.required, Validators.email, Validators.maxLength(30)]),
     password : new FormControl('',[Validators.required , Validators.minLength(6), Validators.maxLength(28)]),
+    designition : new FormControl('',[Validators.required]),
     status : new FormControl('',[Validators.required]) 
   });
   
@@ -29,6 +30,10 @@ export class SuperAdminComponent {
   dataSource = new MatTableDataSource<any>([]);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  public getDesignition:any = [
+
+  ];
 
   constructor(private homeServiceObj:HomeService){
 
@@ -46,12 +51,21 @@ export class SuperAdminComponent {
                         "PhoneNumber":superAdminStore.phoneNumber,
                         "role":"Super Admin",
                         "email":superAdminStore.email,
-                        "password":superAdminStore.password,
+                        "password":superAdminStore.password,                        
+                        "designition":superAdminStore.designition,       
                         "status":superAdminStore.status
                       };
     this.homeServiceObj.usersAddApi(superAdminAdd).subscribe(
         (res:any)=>{
           console.log(res);
+        }
+      );
+
+    
+      this.homeServiceObj.usersGetApi("Super Admin").subscribe(
+        (res:any)=>{
+          console.log(res);
+          this.dataSource = new MatTableDataSource<any>(res);
         }
       );
   }
@@ -70,6 +84,14 @@ export class SuperAdminComponent {
         this.dataSource = new MatTableDataSource<any>(res);
       }
     );
+
+    this.homeServiceObj.designitionGetApi().subscribe(
+      (res:any)=>{
+        this.getDesignition=res;
+        console.log(this.getDesignition);
+      }
+    );
+
   }
     
 

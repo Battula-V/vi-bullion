@@ -10,7 +10,7 @@ export class HomeService {
 
   }
 
- 
+  
   
   departmentAddApi(body:any){
     return this.httpClientObj.post("http://127.0.0.1:8000/api/add-department",body);
@@ -54,5 +54,7 @@ export class HomeService {
   //  httpParamsObj.set("role","Admin");
    return this.httpClientObj.get("http://127.0.0.1:8000/api/get-users?role="+role);
   }
+
+  
 
 }

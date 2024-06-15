@@ -42,7 +42,10 @@ export class LoginComponent {
     console.log(dataOne);
     console.log(dataOne.email);
     console.log(dataOne.password);
-    this.loginServiceObj.login(dataOne.email,dataOne.password).subscribe(
+    let loginStatus={"email":dataOne.email,
+                      "password":dataOne.password
+                    };
+    this.loginServiceObj.login(loginStatus).subscribe(
       (res : any) =>{
         console.log(res);
         this.toastr.success('loginSuccess', 'Success');

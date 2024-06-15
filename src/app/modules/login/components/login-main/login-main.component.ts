@@ -7,11 +7,11 @@ import { ApplicationContext } from "../../../../shared/models/application-contex
 import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-forgot',
-  templateUrl: './forgot.component.html',
-  styleUrls: ['./forgot.component.scss']
+  selector: 'app-login-main',
+  templateUrl: './login-main.component.html',
+  styleUrls: ['./login-main.component.scss']
 })
-export class ForgotComponent {
+export class LoginMainComponent {
 
   loginGroup = new FormGroup({
 
@@ -20,8 +20,7 @@ export class ForgotComponent {
     password : new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(10)])
 
   });
-
-
+  
 
   applicationContextObj = new ApplicationContext();
 
@@ -60,6 +59,5 @@ export class ForgotComponent {
       }
     );
   }
-
 
 }
