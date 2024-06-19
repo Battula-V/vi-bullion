@@ -16,8 +16,8 @@ export class ForgotComponent {
   loginGroup = new FormGroup({
 
     email : new FormControl('', [Validators.required, Validators.email, Validators.maxLength(30)]),
-
-    password : new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(10)])
+    phoneNumber : new FormControl('',[Validators.required , Validators.minLength(10) , Validators.maxLength(10)]),
+    // password : new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(10)])
 
   });
 
@@ -42,9 +42,9 @@ export class ForgotComponent {
     console.log(typeof(dataOne));
     console.log(dataOne);
     console.log(dataOne.email);
-    console.log(dataOne.password);
+    // console.log(dataOne.password);
     let loginStatus={"email":dataOne.email,
-      "password":dataOne.password
+      //"password":dataOne.password
     };
     this.loginServiceObj.login(loginStatus).subscribe(
       (res : any) =>{

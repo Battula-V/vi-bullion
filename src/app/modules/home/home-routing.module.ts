@@ -37,10 +37,13 @@ const routes: Routes = [
       {
         path:"designition",
         component:DesgnitionComponent
+      },
+      {
+        path:"**",
+        redirectTo:"dashboard"
       }
     ]
-  }
-
+  },
 ]
 
 

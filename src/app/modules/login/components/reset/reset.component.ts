@@ -17,7 +17,9 @@ export class ResetComponent {
 
     email : new FormControl('', [Validators.required, Validators.email, Validators.maxLength(30)]),
 
-    password : new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(10)])
+    password : new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(10)]),
+
+    conformPassword : new FormControl('',[Validators.required, Validators.minLength(6), Validators.maxLength(10)])
 
   });
 

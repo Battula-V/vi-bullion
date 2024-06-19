@@ -43,11 +43,11 @@ export class LoginMainComponent {
     console.log(dataOne.email);
     console.log(dataOne.password);
     let loginStatus={"email":dataOne.email,
-      "password":dataOne.password
-    };
+                     "password":dataOne.password
+                    };
     this.loginServiceObj.login(loginStatus).subscribe(
-      (res : any) =>{
-        console.log(res);
+      (response : any) =>{
+        console.log(response);
         this.toastr.success('loginSuccess', 'Success');
         this.applicationContextObj.loginStatus=true;
         this.applicationContextServiceObj.updateApplicationContext(this.applicationContextObj);
