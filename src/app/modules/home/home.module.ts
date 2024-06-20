@@ -23,6 +23,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { HomeService } from './home.service';
 import { MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
+import { CategoryComponent } from './components/category/category.component';
+import { SubCategoryComponent } from './components/sub-category/sub-category.component';
+import { ProductsComponent } from './components/products/products.component';
 
 
 
@@ -34,7 +37,10 @@ import {MatTableModule} from '@angular/material/table';
     AdminComponent,
     DepartmentsComponent,
     EmployeesComponent,
-    DesgnitionComponent
+    DesgnitionComponent,
+    CategoryComponent,
+    SubCategoryComponent,
+    ProductsComponent
   ],
   imports: [
     CommonModule,

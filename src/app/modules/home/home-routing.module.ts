@@ -8,35 +8,54 @@ import { AdminComponent } from './components/admin/admin.component';
 import { DepartmentsComponent } from './components/departments/departments.component';
 import { EmployeesComponent } from './components/employees/employees.component';
 import { DesgnitionComponent } from './components/desgnition/desgnition.component';
+import { CategoryComponent } from './components/category/category.component';
+import { SubCategoryComponent } from './components/sub-category/sub-category.component';
+import { ProductsComponent } from './components/products/products.component';
 
 const routes: Routes = [
   {
     path :"",
     component : HomeComponent,
     children:[
+      // {
+      //   path :"dashboard",
+      //   component : DashboardComponent
+      // },
+      // {
+      //   path:"super-admin",
+      //   component:SuperAdminComponent
+      // },
+      // {
+      //   path:"admin",
+      //   component:AdminComponent
+      // },
+      // {
+      //   path:"department",
+      //   component:DepartmentsComponent
+      // },
+      // {
+      //   path:"employees",
+      //   component:EmployeesComponent
+      // },
+      // {
+      //   path:"designition",
+      //   component:DesgnitionComponent
+      // },
       {
-        path :"dashboard",
-        component : DashboardComponent
+        path:"dashboard",
+        component:DashboardComponent
       },
       {
-        path:"super-admin",
-        component:SuperAdminComponent
+        path:"category",
+        component:CategoryComponent
       },
       {
-        path:"admin",
-        component:AdminComponent
+        path:"sub-category",
+        component:SubCategoryComponent
       },
       {
-        path:"department",
-        component:DepartmentsComponent
-      },
-      {
-        path:"employees",
-        component:EmployeesComponent
-      },
-      {
-        path:"designition",
-        component:DesgnitionComponent
+        path:"products",
+        component:ProductsComponent
       },
       {
         path:"**",
