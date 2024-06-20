@@ -28,7 +28,7 @@ export class ForgotComponent {
 
 
   constructor(private loginServiceObj : LoginService ,
-              private toastr : ToastrService ,
+              // private toastr : ToastrService ,
               private applicationContextServiceObj : ApplicationContextService,
               private routerObj : Router
             ){
@@ -42,21 +42,21 @@ export class ForgotComponent {
     console.log(typeof(dataOne));
     console.log(dataOne);
     console.log(dataOne.email);
-    // console.log(dataOne.password);
+    //console.log(dataOne.password);
     let loginStatus={"email":dataOne.email,
       //"password":dataOne.password
     };
     this.loginServiceObj.login(loginStatus).subscribe(
       (res : any) =>{
         console.log(res);
-        this.toastr.success('loginSuccess', 'Success');
+        //this.toastr.success('loginSuccess', 'Success');
         this.applicationContextObj.loginStatus=true;
         this.applicationContextServiceObj.updateApplicationContext(this.applicationContextObj);
         this.routerObj.navigate(['/home']);
       },
       (error : any)=>{
         console.log(error);
-        this.toastr.error("loginFailed" , "Failed" );
+        //this.toastr.error("loginFailed" , "Failed" );
       }
     );
   }

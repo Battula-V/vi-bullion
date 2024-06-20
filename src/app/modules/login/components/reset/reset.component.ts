@@ -5,7 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ApplicationContextService} from "../../../../shared/services/application-context.service";
 import { ApplicationContext } from "../../../../shared/models/application-context.model";
 import { Router } from "@angular/router";
-
+ 
 @Component({
   selector: 'app-reset',
   templateUrl: './reset.component.html',
@@ -32,7 +32,8 @@ export class ResetComponent {
   constructor(private loginServiceObj : LoginService ,
               private toastr : ToastrService ,
               private applicationContextServiceObj : ApplicationContextService,
-              private routerObj : Router
+              private routerObj : Router,
+               
             ){
 
     
