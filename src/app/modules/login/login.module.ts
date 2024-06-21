@@ -11,7 +11,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule,ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
-import { LoginService } from './login.service';
 import { ForgotComponent } from './components/forgot/forgot.component';
 import { ResetComponent } from './components/reset/reset.component';
 import { LoginMainComponent } from './components/login-main/login-main.component';
@@ -39,7 +38,7 @@ import { LoginMainComponent } from './components/login-main/login-main.component
     HttpClientModule
   ],
   providers:[
-    LoginService
+     
   ]
 })
 export class LoginModule { }

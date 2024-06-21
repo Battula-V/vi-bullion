@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';  
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { LoginService } from "../login/login.service";
 import { ToastrService } from 'ngx-toastr';
 import { ApplicationContextService} from "../../shared/services/application-context.service";
 import { ApplicationContext } from "../../shared/models/application-context.model";
@@ -26,7 +25,7 @@ export class LoginComponent {
 
 
 
-  constructor(private loginServiceObj : LoginService ,
+  constructor(
               private toastr : ToastrService ,
               private applicationContextServiceObj : ApplicationContextService,
               private routerObj : Router
@@ -42,22 +41,6 @@ export class LoginComponent {
     console.log(dataOne);
     console.log(dataOne.email);
     console.log(dataOne.password);
-    let loginStatus={"email":dataOne.email,
-                      "password":dataOne.password
-                    };
-    this.loginServiceObj.login(loginStatus).subscribe(
-      (res : any) =>{
-        console.log(res);
-        this.toastr.success('loginSuccess', 'Success');
-        this.applicationContextObj.loginStatus=true;
-        this.applicationContextServiceObj.updateApplicationContext(this.applicationContextObj);
-        this.routerObj.navigate(['/home']);
-      },
-      (error : any)=>{
-        console.log(error);
-        this.toastr.error("loginFailed" , "Failed" );
-      }
-    );
   }
 
 

@@ -1,8 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms'; 
-import { HomeService } from "../../home.service";
-import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
+import { FormControl, FormGroup, Validators } from '@angular/forms';  
+import { MatPaginator } from '@angular/material/paginator'; 
 
 @Component({
   selector: 'app-category',
@@ -11,44 +9,29 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class CategoryComponent {
 
-  addDepartmentForm = new FormGroup({
-    departmentName :  new FormControl('',[Validators.required]),
+  addCategoryForm = new FormGroup({
+    categoryName :  new FormControl('',[Validators.required]),
     status : new FormControl('',[Validators.required]) 
   });
   
-  displayedColumns: string[] = ['id' ,'department', 'Status' ];
+  displayedColumns: string[] = ['id' ,'category', 'status' ];
   dataSource!:any;
 
   
 
   @ViewChild(MatPaginator) paginator! : MatPaginator;
    
-  constructor(private homeServiceObj : HomeService){
+  constructor( ){
      
   }
 
   submit(){
-    let addDepartmentFormStore = this.addDepartmentForm.value;
+    let addDepartmentFormStore = this.addCategoryForm.value;
     console.log(addDepartmentFormStore);
-    let departmentAdd={"department":addDepartmentFormStore.departmentName,
-                       "Status":addDepartmentFormStore.status
-                      };
-    this.homeServiceObj.departmentAddApi(departmentAdd).subscribe(
-      (response:any)=>{
-        console.log(response); 
-      }
-       
-    );
+    
   }
 
-  ngOnInit(){   
-    this.homeServiceObj.departmentGetApi().subscribe(
-      (response:any)=>{
-        console.log(response);
-        this.dataSource = new MatTableDataSource<any>(response);
-      }
-    );
-
+  ngOnInit(){    
   }  
 
   ngAfterViewInit() {
