@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-login-main',
+  templateUrl: './login-main.component.html',
+  styleUrls: ['./login-main.component.scss']
 })
-export class LoginComponent {
+export class LoginMainComponent {
 
   loginGroup = new FormGroup({
     email : new FormControl('',[Validators.required , Validators.email , Validators.maxLength(30)]),
