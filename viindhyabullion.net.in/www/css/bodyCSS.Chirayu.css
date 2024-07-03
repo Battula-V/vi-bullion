@@ -1,0 +1,157 @@
+﻿@charset "utf-8";
+
+
+body {
+    /* background-color: #fff !Important; */
+    text-shadow: none !Important;
+	margin:0 0 0 0 !important;
+	padding: 0 !important;
+	color: #fff !important;
+	/*font-family: "Times New Roman", Times, serif !Important;*/
+	
+}
+
+	
+/*img{
+	
+	margin : 0 !Important;
+	
+}
+
+.homePageTable
+{
+	
+	line-height:100% !Important;
+	
+}*/
+
+.pageHeaders {      
+
+/* becuase of line height in jquery mobile gap is there above this header */
+	line-height:100% !Important;
+    width: 100%;
+    height: 30px;
+    position: relative;
+    text-align: center;
+    text-shadow: none !Important;
+    border: 0px solid;
+	
+	margin : 0 !Important;
+    padding-top: 10px;
+	padding-bottom: 10px;
+    z-index: 10;
+    
+                overflow: hidden;
+                font-weight: bold;
+                color:#FFF !Important;
+  
+    
+    
+    font-size: 150%;
+  
+  background: #af7e3b;
+background: -moz-linear-gradient(left, #af7e3b 0%, #c6aa84 50%, #af7e3b 100%);
+background: -webkit-linear-gradient(left, #af7e3b 0%,#c6aa84 50%,#af7e3b 100%);
+background: linear-gradient(to right, #af7e3b 0%,#c6aa84 50%,#af7e3b 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#af7e3b', endColorstr='#af7e3b',GradientType=1 );
+  
+    
+        }
+
+
+
+
+/* CSS Document */		
+		/* unvisited link */
+/*a:link {
+    color: white !Important;
+	text-decoration: none;
+}*/
+
+/* visited link */
+/*a:visited {
+    color: white !Important;
+	text-decoration: none;
+}*/
+
+/* mouse over link */
+/*a:hover {
+    color: white !Important;
+	text-decoration: none;
+}*/
+
+/* selected link */
+/*a:active {
+    color: white !Important;
+	text-decoration: none;
+}
+
+	*/
+
+
+
+
+.ui-header {
+    background: transparent !Important;
+	text-shadow: none !Important;
+	
+	color:white !Important;
+	margin:0 0 0 0 !important;
+	padding: 0 !important;
+	
+	border:0 !Important;
+	border-style:none !Important;
+	line-height:50% !Important;
+}
+.ui-page {
+     background-color: transparent  !Important;
+	text-shadow: none !Important;
+	
+	color:white !Important;
+	margin:0 0 0 0 !important;
+	padding: 0 !important;
+	
+	border:0 !Important;
+	border-style:none !Important;
+	
+}
+
+.ui-content{
+    /* background-image: linear-gradient(to top,#fff,#fff) !important; */
+	/* text-shadow: 1px #000 !Important; */
+	border-radius: 0px ;
+	
+	color:#000 !Important;
+	margin:0 0 0 0 !important;
+	padding: 0 !important;
+	
+	
+	border: 2px solid #bc9c3f!Important;
+	/* border-style:none !Important; */
+	
+}
+
+.ui-footer{
+    background-color: transparent  !Important;
+	text-shadow: none !Important;
+	
+	color:white !Important;
+	margin:0 0 0 0 !important;
+	padding: 0 !important;
+	
+	border:0 !Important;
+	border-style:none !Important;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+

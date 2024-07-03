@@ -1,0 +1,195 @@
+@font-face {
+    font-family: 'lato1';
+    src: url("../fonts3/roboto-mono-v22-latin-regular.ttf");
+}
+@media screen and (max-width: 500px){
+ 
+    .jewellryHeader {
+        font-size: 13px;
+        font-weight: 500;
+        color: #edcd68;
+        font-family: 'Roboto';
+    }
+    .top55span{
+        font-size: 18px;
+        font-family: 'lato1';
+        padding: 1px 10px;
+    }
+    #gvData2 table{
+        margin-bottom: 2px;
+    }
+    .buy_sell_label{
+        font-size: 16px!important;
+        font-weight: 500;
+    }
+    .padNew1{
+        padding: 3% 1%;
+    }
+    .padNew2{
+        padding: 15% 0% 5%;
+    }
+    table.calc tr td {
+        padding: 4px 6px;
+        color: #FFF;
+        /* width: 25%; */
+    }
+    input[type="button"] {
+        width: 100%;
+        height: 40px;
+        background: #FFFFFF;
+        color: #000;
+        border-radius: 8px;
+        font-weight: 800;
+    }
+    .carat {
+        font-size: 14px;
+    }
+    .calc{
+        font-size: 13px;
+    }
+}
+
+.bgColor_color {
+    background-color: #281B08 !Important;
+    color: #FFF !important;
+}
+table 
+            {
+                border-collapse: separate;
+                border-spacing: 0px;
+            }
+            table.Bill_table {
+            border-collapse: separate;
+            box-sizing: border-box;
+            border-spacing: 0 6px;
+        }
+
+        table.Bill_table td:nth-child(odd) {
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 15px;
+            font-weight: 600 !important;
+            background-image: url(../img/appimages/Box_03.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        table.Bill_table td:nth-child(even) {
+            color: #FFFFFF;
+            text-transform: uppercase;
+            font-size: 15px;
+            font-weight: 600 !important;
+            /* background-image: url(../img/appimages/BOX_04.png); */
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+			text-align: left;
+        }
+
+        table.Bill_table td span {
+            text-transform: uppercase;
+            font-weight: 600 !important;
+            font-size: 15px;
+            text-align: left;
+            padding-left: 30px !important;
+        }
+
+
+@media screen and (min-width: 501px){
+    
+    .jewellryHeader {
+        font-size: 13px;
+        font-weight: 500;
+        color: #edcd68;
+        font-family: 'Roboto';
+    }
+    .top55span{
+        font-size: 20px;
+        font-family: 'lato1';
+        padding: 1px 10px;
+        /* padding:  1px; */
+    }
+    #gvData2 table{
+        margin-bottom: 8px;
+    }
+    .padNew1
+    {
+        padding: 5% 2%;
+    }
+    .padNew2{
+        padding: 15% 0%;
+    }
+    table.calc tr td {
+        padding: 4px 8px;
+        color: #FFF;
+        /* width: 25%; */
+    }
+    input[type="button"] {
+        width: 100%;
+        height: 40px;
+        background: #FFFFFF;
+        color: #000;
+        border-radius: 8px;
+        font-weight: 800;
+    }
+    .carat {
+        font-size: 16px;
+    }
+    .calc{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    
+    .jewellryHeader {
+        font-size: 13px;
+        font-weight: 500;
+        color: #edcd68;
+        font-family: 'Roboto';
+    }
+    .Bill_table tr {
+        margin-bottom: 20px!important;
+        /* line-height: 1.6!important; */
+        /* font-size: 1rem!important; */
+        
+    }
+    .Bill_table {
+        /* line-height: 2!important; */
+        font-size: 0.8rem!Important;
+        margin: 3% 4%;
+    }
+}
+
+@media screen and (min-width: 901px){
+    
+    .jewellryHeader {
+        font-size: 13px;
+        font-weight: 500;
+        color: #edcd68;
+        font-family: 'Roboto';
+        
+    }
+    .top55span{
+        font-size: 22px;
+        font-family: 'lato1';
+        padding: 1px 10px;
+    }
+    .buy_sell_label{
+        font-size: 18px!important;
+        font-weight: 600;
+    }
+    .Bill_table tr {
+        margin-bottom: 50px!important;
+        /* line-height: 1.6!important; */
+        /* font-size: 1rem!important; */
+        
+    }
+    .Bill_table {
+        /* line-height: 2!important; */
+        font-size: 1rem!Important;
+        margin: 5% 7%;
+        
+
+    }
+}
+

@@ -1,0 +1,285 @@
+<header id="header" data-plugin-options="{'stickyEnabled': false, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 155, 'stickySetTop': '0'}">
+    <div class="header-body">
+        <div class="header-top" style="display: none;">
+            <div class="header-top-container container">
+                <div class="header-row">
+                    <div class="header-column justify-content-start">
+                    <!--<table class="text-center" style="width:100%;line-height: 14px;">-->
+                        <!--<tr>-->
+                            <!--<td>-->
+                                <!--<span class="align-items-center color-black">-->
+                                    <!--<a href="mailto:info@sncdbullion.com" style="color:#000"><a href="mailto:info@sncdbullion.com" style="color:#000">Email - info@sncdbullion.com</a></a>-->
+                                <!--</span>-->
+                            <!--</td> -->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td>-->
+                                <!--<span class="align-items-center color-black">-->
+                                    <!--WhatsApp No. <i class="fa fa-whatsapp" aria-hidden="true" style="color: #21a953;l-weight: 700;font-size: 14px;"></i> - <a href="https://api.whatsapp.com/send?phone=919967111113 " style="color:#000;">+91-9967111113 </a>-->
+                                <!--</span>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                    <!--</table>-->
+                    </div>
+                    
+                    <style>
+                        @media screen and (min-width:991px)
+                        {
+                            .header-row
+                            {
+                                /* padding-top:.25rem !important;
+                                padding-bottom:.25rem !important; */
+                                
+                                /* visibility:hidden; */
+                            }
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+        <div class="header-conta30.iner">  
+            <div class="header-row  headImg">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-md-5" id="iconimage">
+                            <div class="hLeftholder">
+                                <h1 class="site-logo">
+                                    <a routerLink="live-rates"><img class="LogoImgWidth" src="assets/img/logo/Logo.png"></a>
+                                </h1>
+                            <!-- <span class="align-items-center mr-sm-4" style="color:#000;font-weight:600;">
+                                <img src="assets/img/logo/Logo.png" class="LogoImgWidth" style="z-index: 999;"/>
+                            </span>	 -->
+                        </div>
+                        </div>  
+                        
+                        <!-- <div class="col-md-4 myHeadClass" id="iconimage">
+                            <span class="align-items-center mr-sm-4" style="color:#000;font-weight:600;"> -->
+                                <!-- <img src="assets/img/logo/Logo.png" class="LogoImgWidth" /> -->
+                            <!-- </span>	
+                        </div> -->
+
+                        <div class="col-lg-7 col-md-8" id="iconimage" style="text-align: center;">
+                            
+                            <span class="align-items-center mob-none" style="color:#000;">
+                                <div class="header-column justify-content-center">
+                                    <ul class="header-top-social-icons social-icons social-icons-transparent d-none d-lg-block"> <!--d-none-->
+                                    <!--<a href="contact-us.html">Contact us</a>-->
+                                        <li style="margin-left: 1px;display: inline-block;color: #232a34;"><img src="assets/img/india1.png" class="flg"> <span id="date_time">Tue 5:41:42 PM</span> </li>
+                                        <li style="margin-left: 1px;display: inline-block;color: #232a34;"><img src="assets/img/us1.png" class="flg"> <span id="date_time_us">Tue 8:41:42 PM</span> </li>
+                                        <li style="margin-left: 1px;display: inline-block;color: #232a34;"><img src="assets/img/uk1.png" class="flg"> <span id="date_time_eng">Wed 2:41:42 AM</span> </li>
+                                    </ul>
+                                    <script type="text/javascript">
+                                        function date_time(id) 
+                                        {
+                                              days = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
+                                              d = new Date();
+                                              //india
+                                              var ihours = d.getHours();
+                                              var iminutes = d.getMinutes();
+                                              var iseconds = d.getSeconds();
+                                              var isuffix = "AM";
+                                              var iday = (d.getDay());
+
+                                              if (ihours >= 12) {
+                                                  isuffix = "PM";
+                                                  ihours = ihours - 12;
+                                              }
+                                              if (ihours == 0) {
+                                                  ihours = 12;
+                                              }
+
+                                              if (iminutes < 10) {
+                                                  iminutes = "0" + iminutes;
+                                              }
+                                              if (iseconds < 10) {
+                                                  iseconds = "0" + iseconds;
+                                              }
+                                              result = '' + days[iday] + ' ' + ihours + ':' + iminutes + ':' + iseconds + ' ' + isuffix;
+                                              document.getElementById(id).innerHTML = result;
+                                              setTimeout('date_time("' + id + '");', '1000');
+                                              return true;
+                                        }
+                                        function date_time_us(id1) {
+                                              days = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
+                                              d = new Date();
+                                              utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+                                              us = new Date(utc + (3600000 * (-5.00)));
+                                              //Us
+                                              var uhours = us.getHours();
+                                              var uminutes = us.getMinutes();
+                                              var useconds = us.getSeconds();
+                                              var usuffix = "AM";
+                                              var uday = (us.getDay());
+                                              if (uhours >= 12) {
+                                                  usuffix = "PM";
+                                                  uhours = uhours - 12;
+                                              }
+                                              if (uhours == 0) {
+                                                  uhours = 12;
+                                              }
+
+                                              if (uminutes < 10) {
+                                                  uminutes = "0" + uminutes;
+                                              }
+                                              if (useconds < 10) {
+                                                  useconds = "0" + useconds;
+                                              }
+                                              result = '' + days[uday] + ' ' + uhours + ':' + uminutes + ':' + useconds + ' ' + usuffix;
+                                              document.getElementById(id1).innerHTML = result;
+                                              setTimeout('date_time_us("' + id1 + '");', '1000');
+                                              return true;
+
+                                        }
+                                        function date_time_eng(id2) {
+                                              days = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
+                                              d = new Date();
+                                              utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+                                              us = new Date(utc + (3600000 * (1.00)));
+                                              //Us
+                                              var uhours = us.getHours();
+                                              var uminutes = us.getMinutes();
+                                              var useconds = us.getSeconds();
+                                              var usuffix = "AM";
+                                              var uday = (us.getDay());
+                                              if (uhours >= 12) {
+                                                  usuffix = "PM";
+                                                  uhours = uhours - 12;
+                                              }
+                                              if (uhours == 0) {
+                                                  uhours = 12;
+                                              }
+
+                                              if (uminutes < 10) {
+                                                  uminutes = "0" + uminutes;
+                                              }
+                                              if (useconds < 10) {
+                                                  useconds = "0" + useconds;
+                                              }
+                                              result = '' + days[uday] + ' ' + uhours + ':' + uminutes + ':' + useconds + ' ' + usuffix;
+                                              document.getElementById(id2).innerHTML = result;
+                                              setTimeout('date_time_eng("' + id2 + '");', '1000');
+                                              return true;
+                                        }
+                                    </script>
+                                    <script type="text/javascript">window.onload = date_time('date_time');</script>
+                                    <script type="text/javascript">window.onload = date_time_us('date_time_us');</script>
+                                    <script type="text/javascript">window.onload = date_time_eng('date_time_eng');</script>
+                                
+                                    
+                                </div>
+                                
+                                <!-- <img src="assets/img/logo/Logo.png" class="LogoImgWidth1"/> -->
+                            </span>
+                            <span class="align-items-center mr-sm-4" style="color:#000;font-weight:600;"> 
+                                <img src="assets/img/logo/LogoN.png" class="LogoImgWidth1" />
+                            </span>
+
+                            
+                            
+                        </div>
+                        <style>
+                            @media screen and (max-width:991px)
+                            {
+                                .LiveRates_Heading
+                                {
+                                    text-align:center;
+                                }
+                                #logoimage p
+                                {
+                                    font-size:22px;
+                                    line-height:1.5 !important;
+                                }
+                            }
+                            @media screen and (min-width:991px)
+                            {
+                                .LiveRates_Heading
+                                {
+                                    text-align:left;
+                                }
+                                #logoimage
+                                {
+                                    font-size:32px;
+                                }
+                            }
+                        </style>
+                        <div class="col-md-2 text-right social_icons mob-none">
+                            <span class="align-items-center mr-sm-3">
+                                <a data-ajax='false' href="#">
+           <img src="assets/img/ari/D1.jpg" class="dwnld" /></a>
+                           </span>
+                           <span class="align-items-center mr-sm-3">
+                               <a data-ajax='false' href="#">
+                                   <img src="assets/img/ari/D2.jpg" class="dwnld" /></a>
+                           </span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="header-row" style="background-image:linear-gradient(to right, #C7A251, #C7A251)">
+                <div class="container" id="navhead" style="padding-right:0 !important;padding-left:0 !important;">
+                    <div class="header-column justify-content-start">
+                        <div class="header-nav header-nav-border-top header-nav-top-line justify-content-center">
+                            <div class="header-nav-main header-nav-main-uppercase header-nav-main-effect-1 header-nav-main-sub-effect-1">
+                                <nav class="collapse">
+                                    <ul class="nav flex-column flex-lg-row" id="mainNav" style="padding-left:10px">
+                                        
+                                        <li class="active"> 
+                                            <a routerLink="live-rates">
+                                                Live Rates </a>
+                                         </li>
+                                         <li> 
+                                            <a routerLink="coin-rates">
+                                                Coins </a>
+                                         </li>
+                                         
+                                        <li>
+                                            <a routerLink="contact-details">
+                                            Booking Desk</a>
+                                        </li>
+                                        
+                                        <li >
+                                            <a routerLink="bank-details">
+                                            Bank Details</a>
+                                        </li>
+
+                                        <li>
+                                            <a routerLink="calculator">
+                                            Jewellery Calculator</a>
+                                        </li>
+
+                                        <li>
+                                            <a routerLink="contact-us">
+                                            Contact Us</a>
+                                        </li>
+                                    
+                                    <!-- <li id="showlogin">
+                                        <a  href="www/Login.htm" >
+                                            Login														</a>													</li> -->
+                                </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="text-right d-none d-lg-block">
+                            <span class="align-items-center mr-sm-1" id="openaccountbtn">
+                                <a data-ajax="false" href="www/Login.html" id="openaccountbtn" class="btn btn-5 btn-fs-2 font-weight-semibold rounded-0 ml-3 color-black" style="background-image:linear-gradient(to bottom, #e6ce66, #fbea7c, #ffffaa, #fceb7f, #d9b252,#c6963e);display: none;">LOGIN</a>										</span>
+                            <span class="align-items-center mr-sm-1" id="loginbtn" style="display: none;">
+                                <a data-ajax="false" href="www/Login.html" id="loginbtn1" class="btn btn-5 btn-fs-2 font-weight-semibold rounded-0 ml-3 color-black" style="background-image:linear-gradient(to bottom, #e6ce66, #fbea7c, #ffffaa, #fceb7f, #d9b252,#c6963e);display: none;">LOGOUT</a>									</span>										</div>
+                    </div>
+                    <div class="header-column justify-content-start">
+                        <div><img class="scroll-logo" alt="Logo" src="assets/img/amsbullion2.html" style="display:none;width:25%;max-width:25%;padding-top:0px;"></div>
+                        <button class="header-btn-collapse-nav ml-3" data-toggle="collapse" data-target=".header-nav-main nav">
+                            <span class="hamburguer">
+                                <span></span>
+                                <span></span>
+                                <span></span>										</span>
+                            <span class="close">
+                                <span></span>
+                                <span></span>										</span>									</button>
+                    </div>
+                </div>	
+            </div>
+        </div>
+    </div>
+
+</header>

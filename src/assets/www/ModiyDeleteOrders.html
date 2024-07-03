@@ -1,0 +1,967 @@
+﻿<!DOCTYPE HTML>
+<html xmlns="https://www.w3.org/1999/xhtml">
+	
+<!-- Mirrored from viindhyabullion.net.in/www/ModiyDeleteOrders.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Jul 2024 09:09:23 GMT -->
+<head>
+		<title>VIINDHYA BULLION | Modify Delete Orders</title>
+		<!-- Mobile Metas -->
+		<link rel="icon" type="image/png" href="../img/logo/logo1.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/bodyCSS.Chirayu.css" rel="stylesheet" type="text/css">
+		<!--<link href="css/font-awesome.min.css" rel="stylesheet">-->
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+		<script src="Scripts/jquery-1.11.3.min.js"></script>
+		<!-- Web Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,900%7COpen+Sans:300,400,600,700,800"
+		rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css2?family=Merriweather&amp;display=swap" rel="stylesheet">				
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../vendor/font-awesome/css/fontawesome-all.min.css">
+		<link rel="stylesheet" href="../vendor/animate/animate.min.css">
+		<link rel="stylesheet" href="../vendor/linear-icons/css/linear-icons.min.css">
+		<link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.theme.default.min.css">
+		<link rel="stylesheet" href="../vendor/magnific-popup/magnific-popup.min.css">
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="../css/theme.css">
+		<link rel="stylesheet" href="../css/theme-elements.css">
+		<link rel="stylesheet" href="../css/demos/demo-business-consulting.css">
+        <!-- Skin CSS -->
+        <link rel="stylesheet" href="../css/skins/skin-business-consulting.css">
+        <!-- Theme Custom CSS -->
+        <link rel="stylesheet" href="../css/custom.css">
+        <!-- Head Libs -->
+        <script src="../vendor/modernizr/modernizr.min.js"></script>
+		<!--Application-->
+		<script src="Scripts/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+		<script src="js/Alert.Chirayu.js" type="text/javascript"></script>
+		<script src="js/spin.min.js" type="text/javascript"></script>
+		<script src="js/Spinner.Chirayu.js" type="text/javascript"></script>
+		<!--End Application-->
+		<style>
+		.ui-mobile [data-role=page], .ui-mobile [data-role=dialog], .ui-page 
+		{
+			top: auto;
+			left: 0;
+			width: 100%;
+			min-height: 100%;
+			position: absolute;
+			display: inherit;
+			border: 0;
+		}
+		body.ui-mobile-viewport, div.ui-mobile-viewport
+		{
+			overflow-x: inherit;
+		}
+		.ui-mobile [data-role=page], .ui-mobile [data-role=dialog], .ui-page 
+		{
+			/* top: 0; */
+			/* left: 0; */
+			/* width: 100%; */
+			/* min-height: 100%; */
+			position: inherit !Important;
+			/* display: none; */
+			border: 0;
+		}
+		.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper 
+		{
+			/* background:#; */
+			background-image: linear-gradient(to right,#b29045,#e3c070,#e8c877,#e3c070,#b29045);
+			padding: 5px;
+			border-radius: 0px;
+			box-shadow: 1px 2px 10px 5px #000;
+		}
+		.ui-page.ui-page-theme-a.ui-page-active 
+		{
+			min-height: auto !Important;
+		}
+	</style>
+    <script type="text/javascript" src="phonegap.html"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+    app.initialize();
+    </script>
+    <script type="text/javascript">
+		document.addEventListener("deviceready", onDeviceReady, false);
+
+        // Cordova is loaded and it is now safe to call Cordova methods
+        //
+        function onDeviceReady() {
+            //alert1('onDeviceReady');
+            // Register the event listener
+            document.addEventListener("backbutton", onBackKeyDown, false);
+            document.addEventListener("pause", onPause, false);
+
+            try {
+
+                window.ga.trackView('Modify Order');
+            }
+            catch (e) {
+                //alert1("Error: " + e);
+
+            }
+
+        }
+
+        function onPause() {
+            //e.preventDefault();
+            // navigator.app.exitApp();
+
+        }
+
+        // Handle the back button
+        //
+        function onBackKeyDown() {
+
+            var r = confirm("Do you want to Exit?");
+            if (r == true) {
+                //e.preventDefault();
+                navigator.app.exitApp();
+
+            } else {
+                //do nothing
+            }
+            //alert1('backbutton pressed');
+
+        }
+
+        $(document).ready(function () {
+
+
+            try {
+                startSpinner();
+
+                $("#ScripCode").attr("value", sessionStorage.scripcodeorder);
+                $("#ScripName").attr("value", sessionStorage.scripname);
+
+                //$('#qty').attr("value", sessionStorage.qty);
+                $('#price').attr("value", parseInt(sessionStorage.price));
+                //$('#limit').attr("value", parseInt(sessionStorage.limit));
+                //$('#OrderType').attr("value", sessionStorage.ordertype);
+                $('#OrderNo').attr("value", sessionStorage.orderno);
+                $('#priceLabel').html("Price : ");
+
+                //if (sessionStorage.ordertype == "Dynamic")
+                //{
+                //	$('#limit').show();
+                //	$('#limitLabel').show();
+                //	$('#priceLabel').html("Premium : ");
+                //}
+                //else{
+                //	$('#limit').hide();
+                //	$('#limitLabel').hide();
+                //	$('#priceLabel').html("Price : ");
+                //}
+
+                $('#cancel').click(function () {
+                    CallWebServiceFromJquerycancel();
+                });
+                $('#modify').click(function () {
+                    CallWebServiceFromJquerymodify();
+                });
+
+                CallWebServiceFromJqueryGetQuantity(sessionStorage.scripcodeorder);
+            }
+            catch (err) {
+                //alert1(err);
+            }
+
+
+
+        });
+
+        function CallWebServiceFromJquerycancel() {
+            try {
+
+                startSpinner();
+
+                var ip = window.localStorage.getItem("ip");
+                var port = window.localStorage.getItem("port");
+                var ScripCode = document.getElementById("ScripCode");
+                var u = ScripCode.value;
+                //   alert1("https://mobiletradingorder.arihantspot.com:8888/VOTSMobile/Services/xml/deleteOrder/" + sessionStorage.exchange + "/" + sessionStorage.orderno + "/" + u.trim() + "/" + sessionStorage.buysell + "/" + window.localStorage.getItem("username") + "/" + window.localStorage.getItem("password") + "");
+                if (ip == null && port == null) {
+
+                    $.ajax({
+                        type: "GET",
+                        url: "https://" + localStorage.ipAddressOrder + ":" + localStorage.step2Port + "/VOTSMobile/Services/xml/deleteOrder/" + sessionStorage.exchange + "/" + sessionStorage.orderno + "/" + u.trim() + "/" + sessionStorage.buysell + "/" + window.localStorage.getItem("username") + "/" + window.localStorage.getItem("password") + "",
+                        dataType: "text",
+                        crossDomain: true,
+                        processData: false,
+                        success: OnSuccess,
+                        error: OnError,
+                        cache: false
+                    });
+
+                }
+                else {
+                    $.ajax({
+                        type: "GET",
+                        url: "https://" + ip + ":" + port + "/VOTSMobile/Services/xml/deleteOrder/" + sessionStorage.exchange + "/" + sessionStorage.orderno.trim() + "/" + u.trim() + "/" + sessionStorage.buysell + "/" + window.localStorage.getItem("username") + "/" + window.localStorage.getItem("password") + "",
+                        dataType: "text",
+                        crossDomain: true,
+                        processData: false,
+                        success: OnSuccess,
+                        error: OnError,
+                        cache: false
+                    });
+                }
+
+            }
+            catch (e) {
+                // alert1("CallWebServiceFromJquery " + e);
+            }
+
+
+        }
+        function CallWebServiceFromJquerymodify() {
+            try {
+
+                startSpinner();
+                var ScripCode = document.getElementById("ScripCode");
+                var u = ScripCode.value;
+                //var qty = document.getElementById("qty");
+                //var q = qty.value;
+                var q = $('#select-native-pendingorder').val();
+                var price = document.getElementById("price");
+                var p = price.value;
+                //var limit = document.getElementById("limit");
+                //var l = limit.value;
+                var ip = window.localStorage.getItem("ip");
+                var port = window.localStorage.getItem("port");
+                //alert1("ScripCode : " + u + " Qty : " + q + " Price : " + p + " Order No : " + sessionStorage.orderno + " Exchange : " + sessionStorage.exchange + " Buy/Sell : " + sessionStorage.buysell + " Client : " + sessionStorage.client + " User : " + window.localStorage.getItem("username") + " Pass : " + window.localStorage.getItem("password"));
+                //alert1("https://mobiletradingorder.arihantspot.com:8888/VOTSMobile/Services/xml/modifyOrder/" + sessionStorage.orderno + "/" + sessionStorage.exchange + "/" + sessionStorage.scripcodeorder + "/" + q + "/" + q + "/" + p + "/" + sessionStorage.buysell + "/" + sessionStorage.client + "/" + window.localStorage.getItem("username") + "/" + window.localStorage.getItem("password") + "/" + p + "");
+                if (ip == null && port == null) {
+                    $.ajax({
+                        type: "GET",
+                        url: "https://" + localStorage.ipAddressOrder + ":" + localStorage.step2Port + "/VOTSMobile/Services/xml/modifyOrder/" + sessionStorage.orderno + "/" + sessionStorage.exchange + "/" + u.trim() + "/" + q + "/" + q + "/" + p + "/" + sessionStorage.buysell + "/" + sessionStorage.client + "/" + window.localStorage.getItem("username") + "/" + window.localStorage.getItem("password") + "/" + p + "",
+                        dataType: "text",
+                        crossDomain: true,
+                        processData: false,
+                        success: OnSuccess1,
+                        error: OnError,
+                        cache: false
+                    });
+                }
+                else {
+                    $.ajax({
+                        type: "GET",
+                        url: "https://" + ip + ":" + port + "/VOTSMobile/Services/xml/modifyOrder/" + sessionStorage.orderno + "/" + sessionStorage.exchange + "/" + u.trim() + "/" + q + "/" + q + "/" + p + "/" + sessionStorage.buysell + "/" + sessionStorage.client + "/" + window.localStorage.getItem("username") + "/" + window.localStorage.getItem("password") + "/" + p + "",
+                        dataType: "text",
+                        crossDomain: true,
+                        processData: false,
+                        success: OnSuccess1,
+                        error: OnError,
+                        cache: false
+                    });
+                }
+            }
+            catch (e) {
+                alert1("CallWebServiceFromJquery " + e);
+            }
+
+
+        }
+
+        function OnSuccess(data, status) {
+
+
+            try {
+                stopSpinner();
+
+                if (data == "1") {
+
+                    alert("Deleted Successfully");
+                    window.location.href = "Orders.html";
+                }
+
+            }
+            catch (e) {
+                // alert(e);
+            }
+
+
+        }
+        function OnSuccess1(data, status) {
+
+
+            try {
+
+
+                stopSpinner();
+                if (data == "0") {
+                    alert(" Modified successfully ");
+                    window.location.href = "Orders.html";
+                }
+                else {
+                    alert("Error, Could not Modify ( " + data + " )");
+
+                }
+
+            }
+            catch (e) {
+                //alert("Cannot  Modify  ");
+            }
+
+
+        }
+
+
+        function OnError(request, status, error) {
+            stopSpinner();
+            //alert1("error : " + error);
+        }
+
+
+
+        function CallWebServiceFromJqueryGetQuantity(scripCode) {
+            try {
+                //startSpinner();
+                //alert1('CallWebServiceFromJqueryGetQuantity');
+                var u = scripCode;
+                var ip = window.localStorage.getItem("ip");
+                var port = window.localStorage.getItem("port");
+                if (ip == null && port == null) {
+                    $.ajax({
+                        type: "GET",
+                        url: "https://" + localStorage.ipAddressOrder + ":" + localStorage.step2Port + "/VOTSMobile/Services/xml/getQuantityList/" + window.localStorage.getItem("username") + "/" + window.localStorage.getItem("password") + "/" + u + "",
+                        // url: "https://spngold.noip.us:8888/VOTSMobile/Services/xml/searchScrip/shashir1/123456/" + u +"",
+                        dataType: "text",
+                        dataType: "text",
+                        crossDomain: true,
+                        processData: false,
+                        success: OnSuccessGetQuantity,
+                        error: OnErrorGetQuantity,
+                        cache: false
+                    });
+                }
+                else {
+                    $.ajax({
+                        type: "GET",
+                        url: "https://" + ip + ":" + port + "/VOTSBroadcast/Services/xml/searchScrip/" + window.localStorage.getItem("username") + "/" + window.localStorage.getItem("password") + "/" + u + "",
+                        dataType: "text",
+                        crossDomain: true,
+                        processData: false,
+                        success: OnSuccessGetQuantity,
+                        error: OnErrorGetQuantity,
+                        cache: false
+                    });
+                }
+            }
+            catch (e) {
+                // alert1("CallWebServiceFromJquery " + e);
+            }
+
+
+        }
+
+        alpha = new Array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " ", ".", ",");
+
+        function removeAllRowsFromTableGetQuantity() {
+
+            //$("#gvData tbody tr").remove();
+            $("#PendingOrderWindowQuantity").empty();
+
+        }
+
+        function OnSuccessGetQuantity(data, status) {
+
+            //alert1(data);
+            try {
+                stopSpinner();
+                if (data != "") {
+                    removeAllRowsFromTableGetQuantity();
+
+                    var messages1 = data.replace("\"", "");
+                    var messages1 = messages1.replace("\"", "");
+                    var messages = messages1.split("|");
+
+                    var zebra;
+                    var trow;
+
+                    var trowString = "";
+
+
+                    zebra = document.getElementById("PendingOrderWindowQuantity");
+                    //trowString = "<form><div class=\"ui-field-contain\"><table width=\"100%\"><tr><td width=\"30%\" align=\"right\" valign=\"center\"><label for=\"select-native-pendingorder\" data-inline=\"true\">Quantity:</label></td><td width=\"70%\" align=\"left\"><select name=\"select-native-pendingorder\" id=\"select-native-pendingorder\" data-inline=\"true\">";
+                    trowString = "<form ><div class=\"ui-field-contain\"><select data-mini=\"true\" name=\"select-native-pendingorder\" id=\"select-native-pendingorder\" data-inline=\"true\">";
+                    for (var i = 0; i < messages.length; i++) {
+                        //var ret = jQuery.parseJSON(messages[i]);
+                        var ret = messages[i].split(",");
+                        // alert1(ret);
+                        if (typeof ret[0] != 'undefined') {
+
+                            trowString = trowString + "<option value=\"" + ret[0] + "\">" + ret[1] + "</option>";
+
+                        }
+
+                    }
+                    trowString = trowString + "</select></div></form>";
+                    //alert1(trowString);
+                    trow = $(trowString);
+                    trow.prependTo(zebra);
+                    $('#select-native-pendingorder').val(sessionStorage.qty);
+                    $('#PendingOrderWindowQuantity').trigger('create');
+
+                    //var element = document.getElementById('select-native-pendingorder');
+                    //element.value = sessionStorage.qty;
+
+                }
+            }
+            catch (e) {
+                //alert1(e);
+            }
+
+
+        }
+
+
+        function OnErrorGetQuantity(request, status, error) {
+            stopSpinner();
+            //alert1("error : " + error);
+        }
+
+
+    </script>
+	<style>
+        .ui-body-a, .ui-page-theme-a .ui-body-inherit, html .ui-bar-a .ui-body-inherit, html .ui-body-a .ui-body-inherit, html body .ui-group-theme-a .ui-body-inherit, html .ui-panel-page-container-a 
+		{
+            background-color: #fff;
+            border-color: #000;
+            color: #333;
+            text-shadow: none;
+        }
+        disabled, button[disabled], .ui-select .ui-btn.ui-state-disabled 
+		{
+            filter: Alpha(Opacity=30);
+            opacity: 0.4;
+            cursor: default!important;
+            pointer-events: none;
+        }
+    </style>
+	</head>
+	<body onLoad="loaded()">
+		<div class="body">
+			<header id="header" data-plugin-options="{'stickyEnabled': false, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 155, 'stickySetTop': '0'}">
+				<div class="header-body" style="background-color: #392623;">
+					<div class="header-top" style="display:none;">
+						<div class="header-top-container container">
+							<div class="header-row ">
+								<div class="header-column justify-content-start">
+								<!--<table class="text-center" style="width:100%;line-height: 14px;">-->
+									<!--<tr>-->
+										<!--<td>-->
+											<!--<span class="align-items-center color-black">-->
+												<!--<a href="mailto:info@sncdbullion.com" style="color:#000"><a href="mailto:info@sncdbullion.com" style="color:#000">Email - info@sncdbullion.com</a></a>-->
+											<!--</span>-->
+										<!--</td> -->
+									<!--</tr>-->
+									<!--<tr>-->
+										<!--<td>-->
+											<!--<span class="align-items-center color-black">-->
+												<!--WhatsApp No. <i class="fa fa-whatsapp" aria-hidden="true" style="color: #21a953;l-weight: 700;font-size: 14px;"></i> - <a href="https://api.whatsapp.com/send?phone=919967111113 " style="color:#000;">+91-9967111113 </a>-->
+											<!--</span>-->
+										<!--</td>-->
+									<!--</tr>-->
+								<!--</table>-->
+								</div>
+								<div class="header-column justify-content-end mob-none">
+									<ul class="header-top-social-icons social-icons social-icons-transparent d-none d-lg-block"> <!--d-none-->
+									<!--<a href="contact-us.html">Contact us</a>-->
+										<li style="margin-left: 25px;display: inline-block;font-weight: 300;font-size: 14px;color: #232a34;"><img src="../img/india.png" class="flg"><span id="date_time">Sat 3:58:01 PM</span> </li>
+										<li style="margin-left: 25px;display: inline-block;font-weight: 300;font-size: 14px;color: #232a34;"><img src="../img/us.png" class="flg"><span id="date_time_us">Sat 5:28:01 AM</span> </li>
+										<li style="margin-left: 25px;display: inline-block;font-weight: 300;font-size: 14px;color: #232a34;"><img src="../img/uk.png" class="flg"><span id="date_time_eng">Sat 11:28:02 AM</span> </li>
+									</ul>
+									<script type="text/javascript">
+                                        function date_time(id) 
+										{
+                                              days = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
+                                              d = new Date();
+                                              //india
+                                              var ihours = d.getHours();
+                                              var iminutes = d.getMinutes();
+                                              var iseconds = d.getSeconds();
+                                              var isuffix = "AM";
+                                              var iday = (d.getDay());
+
+                                              if (ihours >= 12) {
+                                                  isuffix = "PM";
+                                                  ihours = ihours - 12;
+                                              }
+                                              if (ihours == 0) {
+                                                  ihours = 12;
+                                              }
+
+                                              if (iminutes < 10) {
+                                                  iminutes = "0" + iminutes;
+                                              }
+                                              if (iseconds < 10) {
+                                                  iseconds = "0" + iseconds;
+                                              }
+                                              result = '' + days[iday] + ' ' + ihours + ':' + iminutes + ':' + iseconds + ' ' + isuffix;
+                                              document.getElementById(id).innerHTML = result;
+                                              setTimeout('date_time("' + id + '");', '1000');
+                                              return true;
+                                        }
+                                        function date_time_us(id1) {
+                                              days = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
+                                              d = new Date();
+                                              utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+                                              us = new Date(utc + (3600000 * (-5.00)));
+                                              //Us
+                                              var uhours = us.getHours();
+                                              var uminutes = us.getMinutes();
+                                              var useconds = us.getSeconds();
+                                              var usuffix = "AM";
+                                              var uday = (us.getDay());
+                                              if (uhours >= 12) {
+                                                  usuffix = "PM";
+                                                  uhours = uhours - 12;
+                                              }
+                                              if (uhours == 0) {
+                                                  uhours = 12;
+                                              }
+
+                                              if (uminutes < 10) {
+                                                  uminutes = "0" + uminutes;
+                                              }
+                                              if (useconds < 10) {
+                                                  useconds = "0" + useconds;
+                                              }
+                                              result = '' + days[uday] + ' ' + uhours + ':' + uminutes + ':' + useconds + ' ' + usuffix;
+                                              document.getElementById(id1).innerHTML = result;
+                                              setTimeout('date_time_us("' + id1 + '");', '1000');
+                                              return true;
+
+										}
+                                        function date_time_eng(id2) {
+                                              days = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
+                                              d = new Date();
+                                              utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+                                              us = new Date(utc + (3600000 * (1.00)));
+                                              //Us
+                                              var uhours = us.getHours();
+                                              var uminutes = us.getMinutes();
+                                              var useconds = us.getSeconds();
+                                              var usuffix = "AM";
+                                              var uday = (us.getDay());
+                                              if (uhours >= 12) {
+                                                  usuffix = "PM";
+                                                  uhours = uhours - 12;
+                                              }
+                                              if (uhours == 0) {
+                                                  uhours = 12;
+                                              }
+
+                                              if (uminutes < 10) {
+                                                  uminutes = "0" + uminutes;
+                                              }
+                                              if (useconds < 10) {
+                                                  useconds = "0" + useconds;
+                                              }
+                                              result = '' + days[uday] + ' ' + uhours + ':' + uminutes + ':' + useconds + ' ' + usuffix;
+                                              document.getElementById(id2).innerHTML = result;
+                                              setTimeout('date_time_eng("' + id2 + '");', '1000');
+                                              return true;
+                                        }
+									</script>
+									<script type="text/javascript">window.onload = date_time('date_time');</script>
+                                    <script type="text/javascript">window.onload = date_time_us('date_time_us');</script>
+                                    <script type="text/javascript">window.onload = date_time_eng('date_time_eng');</script>
+								<!--<ul class="header-top-social-icons social-icons social-icons-transparent d-md-block">
+										<li class="social-icons-facebook">
+											<a href="https://play.google.com/store/apps/details?id=com.chirayusoft.ravindrajewellery" target="_blank" title="Android"><i class="fab fa-android"></i></a>
+										</li>
+										<li class="social-icons-twitter">
+											<a href="https://itunes.apple.com/us/app/ravindra-jewellery/id1438211430" target="_blank" title="Apple"><i class="fab fa-apple"></i></a>
+										</li>
+										<li class="social-icons-instagram">
+											<a href="https://www.instagram.com/" target="_blank" title="Instragram"><i class="fab fa-instagram"></i></a>
+										</li>
+									</ul>-->
+								</div>
+								<style>
+									@media screen and (min-width:991px)
+									{
+										.header-row
+										{
+											/* padding-top:.25rem !important;
+											padding-bottom:.25rem !important; */
+											
+											/* visibility:hidden; */
+										}
+									}
+								</style>
+							</div>
+						</div>
+					</div>
+					<div class="header-container">  
+						<div class="header-row  headImg" >
+							<div class="container" >
+								<div class="row align-items-center">
+									
+								
+									<div class="col-md-4 text-center mobile-hide " id="" >
+										 <span class="align-items-right mr-sm-4" style="color:#000;">
+											</span>
+										</div>  
+									<div class="col-md-4 " id="iconimage" >
+										<span class="align-items-center mr-sm-4 " style="color:#000;font-weight:600;width: 60%;">
+											<img src="../img/logo/Logo.png" class="LogoImgWidth" />
+										   </span>
+										   					 
+										</span>		
+									</div>
+									<style>
+										@media screen and (max-width:991px)
+										{
+											.LiveRates_Heading
+											{
+												text-align:center;
+											}
+											#logoimage p
+											{
+												font-size:22px;
+												line-height:1.5 !important;
+											}
+										}
+										@media screen and (min-width:991px)
+										{
+											.LiveRates_Heading
+											{
+												text-align:left;
+											}
+											#logoimage
+											{
+												font-size:32px;
+											}
+										}
+									</style>
+									<div class="col-md-4 text-right social_icons mob-none">
+										<span class="align-items-center mr-sm-4">
+											<a data-ajax='false' href="#jewellers">
+												<img src="../img/ari/D1.jpg" class="dwnld" /></a>
+										</span>
+										<span class="align-items-center ">
+											<a data-ajax='false' href="#">
+												<img src="../img/ari/D2.jpg" class="dwnld" /></a>
+										</span>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						
+						<div class="header-row" style="background: #281B08;border-top: 2px solid #c9a155;border-bottom: 2px solid #c9a155;">
+							<div class="container" id="navhead" style="padding-right:0 !important;padding-left:0 !important;">
+								<div class="header-column justify-content-start">
+									<div class="header-nav header-nav-border-top header-nav-top-line justify-content-center">
+										<div class="header-nav-main header-nav-main-uppercase header-nav-main-effect-1 header-nav-main-sub-effect-1">
+											<nav class="collapse">
+												<ul class="nav flex-column flex-lg-row" id="mainNav" style="padding-left:10px">
+                                                    <!-- <li>
+                                                    <a href="index.html">
+                                                    Home </a></li> -->
+                                                    
+                                                <li> 
+                                                    <a  data-ajax="false" href="../LiveRates.html">
+                                                        Live Rates
+                                                    </a>
+                                                </li>
+                                                    
+                                                
+                                                <li>
+                                                    <a data-ajax="false" href="../Contact_Details.html">
+                                                        Booking Desk
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a data-ajax="false" href="../Bank_Details.html">
+                                                        Bank Details
+                                                    </a>
+                                                </li>
+                                                <li >
+                                                    <a data-ajax="false" href="Trades.html">
+                                                        Trades 
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a data-ajax="false" href="Orders.html">
+                                                        Pending Orders
+                                                    </a>
+                                                </li> 
+                                                <li>
+                                                    <a data-ajax="false" href="../contact-us.html">
+                                                        Contact Us
+                                                    </a>
+                                                </li>
+                                                <li id="showlogin">
+                                                    <a  data-ajax="false" href="Login.html" >
+                                                        Login</a>
+                                                </li>
+                                            </ul>
+											</nav>
+										</div>
+									</div>
+									<div class="text-right d-none d-lg-block" >
+										<span class="align-items-center mr-sm-1" id="openaccountbtn" >
+											<a data-ajax='false' href="Login.html" id="openaccountbtn" class="btn btn-5 btn-fs-2 font-weight-semibold rounded-0 ml-3 color-black" style="background-image: linear-gradient(to right, #be8b1f, #b68012, #e7c65f, #fef09f, #e7c65f,#be8b1f, #b68012);">LOGIN</a>										</span>
+										<span class="align-items-center mr-sm-1" id="loginbtn" style="display: none;">
+											<a data-ajax='false' href="Login.html" id="loginbtn1" class="btn btn-5 btn-fs-2 font-weight-semibold rounded-0 ml-3 color-black" style="background-image: linear-gradient(to right, #be8b1f, #b68012, #e7c65f, #fef09f, #e7c65f,#be8b1f, #b68012);">LOGOUT</a>									</span>										</div>
+								</div>
+								<div class="header-column justify-content-start">
+									<div><img class="scroll-logo" alt="Logo" src="img/amsbullion2.html" style="display:none;width:25%;max-width:25%;padding-top:0px;"></div>
+									<button class="header-btn-collapse-nav ml-3" data-toggle="collapse" data-target=".header-nav-main nav">
+										<span class="hamburguer">
+											<span></span>
+											<span></span>
+											<span></span>										</span>
+										<span class="close">
+											<span></span>
+											<span></span>										</span>									</button>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</header>
+<!--#################################################################################################################################################-->
+			<div role="main" class="main" style="min-height: 510px;">
+				<!-- <section class="page-header mb-0" style="background: url(../img/ari/login__header.png) top no-repeat;background-size:cover;">
+					<div class="container py-5 my-4">
+						<div class="row">
+							<div class="col-md-12">
+								<h1 class="font-weight-bold text-color-light heading_underline">EDIT ORDER</h1>
+							</div>
+						</div>
+					</div>
+				</section> -->
+				<section class="section  py-4 " >
+                    <p id="" class="headingTop" style=" margin: 10px 0px 20px 0px;">EDIT ORDERS</p>
+					<!-- <p style="background-color: #cb8e2a;color: #FFF;text-align: center;font-size: 18px;">Welcome to VIINDHYA BULLIONs</p>
+					<p style="color: #670220 ;text-align: center;font-size: 25px;font-weight:bold; margin-top: -25px;">EDIT ORDERS</p> -->
+					<div class="container">
+						<div class="row">
+							<div class="col-md-5 offset-md-3">
+								<div data-role="page" class="ui-page">
+									<div role="main" class="ui-content">
+										<table class="tablestyle" cellspacing="0" cellpadding="0" border="0" style="color: #000 ;
+										width: 100%; border-collapse: separate; ">
+											<tr>
+												<td>
+													<table style="width: 100%; height: 100%; ">
+														<tr>
+															<td style="color:#000 ;" align="right">
+																Scrip Code :															</td>
+															<td align="left">
+																<input id="ScripCode" type="text" value="" name="ScripCode" placeholder="ScripCode"
+																disabled="disabled" style="width: 200px; height: 25px;" data-mini="true" />															</td>
+														</tr>
+														<tr>
+															<td style="color: #000 ;" align="right">
+																Scrip Name :															</td>
+															<td align="left">
+																<input id="ScripName" type="text" value="" name="ScripName" placeholder="ScripName"
+																disabled="disabled" style="width: 200px; height: 25px;" data-mini="true" />															</td>
+														</tr>
+														<tr>
+															<td style="color:#000 ;" align="right">
+																Order No :															</td>
+															<td align="left">
+																<input id="OrderNo" type="text" value="" name="OrderNo" placeholder="OrderNo" disabled="disabled"
+																style="width: 200px; height: 25px;" data-mini="true" />															</td>
+														</tr>
+														<tr>
+															<td style="color: #000 " align="right">
+																Quantity :															</td>
+															<td align="left">
+															<!--<input id="qty" type="number" value="" name="Qty" placeholder="Qty"  style="width: 200px; height: 25px;"/> -->
+																<div style="color: #000 ;" data-role="fieldcontain" id="PendingOrderWindowQuantity"data-mini="true">																</div>															</td>
+														</tr>
+														<tr>
+															<td style="color: #000 " align="right">
+																<span style="color: #000 " id="priceLabel">Price : </span>															</td>
+															<td align="left">
+																<input id="price" type="number" value="" name="Price" placeholder="Price" style="width: 200px;height: 25px;" data-mini="true" />															</td>
+														</tr>
+														<tr>
+															<td align="Center" colspan="2">
+																<div align="center">
+																<!--<form align="center">
+																		<fieldset data-role="controlgroup" data-type="horizontal">-->
+																			<a href="#" data-role="button" style="background: red; color: white;" data-inline="true"
+																			id="cancel">Cancel</a> <a href="#" data-role="button" style="background: blue; color: white;"
+																			data-inline="true" id="modify">Modify</a>
+																	<!--</fieldset>
+																	</form>	-->
+																</div>															</td>
+														</tr>
+													</table>												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+<!--#################################################################################################################################################-->
+<footer id="footer" class="footer-hover-links-light mt-0">
+	<section class="section " style=" padding-left: 15px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-4 mt-4">
+					<div class="icon-box icon-box-style-1 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" style="animation-delay: 100ms;">
+						<div class="icon-box-icon">
+							<i class="lnr lnr-apartment text-10" ></i>									</div>
+						<div class="icon-box-info">
+							<div class="icon-box-info-title">
+								<h3 class="font-weight-bold text-4 mb-0" >Our Address</h3>
+							</div>
+							<p class="color-white">
+           					<!-- VIINDHYA BULLION <br> -->
+							     B 15 & 16, Industrial Estate,<br> Sanath Nagar Road, Hyderabad,<br> Telangana, 500018
+								<!-- <br>Centrex no 6283-6379  -->
+							</p>                               
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-4 mt-4">
+					<div class="icon-box icon-box-style-1 pl-md-3 pl-lg-5 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" style="animation-delay: 100ms;">
+						 <div class="icon-box-icon icon-box-icon-no-top">
+								<i class="fa fa-whatsapp  text-10" ></i>
+						</div>
+						<div class="icon-box-info mt-1">
+							
+								<div class="icon-box-info-title">
+									<h3 class="font-weight-bold text-4 mb-0" >Whatsapp Number</h3>
+								</div>
+								<p>
+									<a href="https://api.whatsapp.com/send?phone=918374316166" class=" hover-effect-1 color-white" >
+										+91-8374316166</a>
+								</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-4 mt-4">
+					<div class="icon-box icon-box-style-1 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" style="animation-delay: 100ms;">
+						<div class="icon-box-icon">
+							<i class="lnr lnr-phone-handset text-10" style="color:#FFFFFF"></i>
+							<br />
+							<br />
+							<br />
+							<br />
+							</div>
+						<div class="icon-box-info mt-1">	
+							
+							<div class="icon-box-info-title" >
+								<h3 class="font-weight-bold  text-4 mb-0" >Contact Number</h3>
+							</div>
+							<p >
+								<a href="tel:+918374316167" class=" hover-effect-1 color-white" >
+									+91-8374316167</a> <br>	
+							</p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="footer-copyright">
+		<div class="container">
+			<div class="row text-center text-md-left align-items-center">
+				<div class="col-md-7 col-lg-8">
+					<p class="text-md-left pb-0 mb-0" style="color: #000;font-weight: 700;">Copyrights © VIINDHYA BULLION</p>
+				</div>
+				<div class="col-md-5 col-lg-4">
+					<p class="text-md-right pb-0 mb-0" style="color: #000;">Powered by : <a style="text-decoration: underline;color: #000;font-weight: 700;" href="https://www.chirayusoft.com/">Chirayu Software Solutions</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+		</div>
+<!--#################################################################################################################################################-->
+		<!-- Vendor -->
+		<script src="../vendor/jquery/jquery.min.js"></script>
+		<script src="../vendor/jquery.appear/jquery.appear.min.js"></script>
+		<script src="../vendor/jquery.easing/jquery.easing.min.js"></script>
+		<script src="../vendor/jquery-cookie/jquery-cookie.min.js"></script>
+		<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="../vendor/common/common.min.js"></script>
+		<script src="../vendor/jquery.validation/jquery.validation.min.js"></script>
+		<!--<script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+		<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>-->
+		<script src="../vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+		<script src="../vendor/isotope/jquery.isotope.min.js"></script>
+		<script src="../vendor/owl.carousel/owl.carousel.min.js"></script>
+		<script src="../vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<script src="../vendor/vide/vide.min.js"></script>
+		<script src="../vendor/vivus/vivus.min.js"></script>
+		<!-- Theme Base, Components and Settings -->
+		<script src="../js/theme.js"></script>
+		<!-- Current Page Vendor and Views -->
+		<script src="../vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+        <script src="../vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+		<!-- Current Page Vendor and Views -->
+		<script src="../js/views/view.contact.js"></script>
+		<!-- Theme Custom -->
+		<script src="../js/custom.js"></script>
+		<!-- Theme Initialization Files -->
+		<script src="../js/theme.init.js"></script>
+		<script src="../js/LiveRates3.js" type="text/javascript"></script>
+		<script src="../js/jquery.marquee.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/ticker2.html"></script>
+		<script src="../js/LiveRateMessage.Chirayu.js" type="text/javascript"></script>
+		<script src="../js/AfterLogin.js" type="text/javascript"></script>
+		<script> 
+			if (!window.localStorage.getItem("username")) {
+		
+				if (!window.localStorage.getItem("password")) {
+	
+					window.location.href = "Login.html";
+				}
+			}
+			</script>
+            <!-- <script>
+
+
+                localStorage.appnameWithMiniadminId = "viindhya";
+                localStorage.defaultScripTemplateId = "viindhya";
+                localStorage.coinsScripTemplateId = "alphasilver";
+                localStorage.ipAddressOrder = "order.viindhyabullion.net.in";
+                localStorage.ipAddressBCast = "bcast.viindhyabullion.net.in";
+                localStorage.step2Port = "8888";
+                localStorage.step3StreamingPort = "7767";
+                localStorage.webPanel = "adminapi.viindhyabullion.net.in";
+                            
+                                    
+                            localStorage.topicForMessage = localStorage.appnameWithMiniadminId + localStorage.MobileType + "All";
+
+
+
+
+                            localStorage.step3HTTPPort = "8878";
+                            localStorage.chartIpAddress = "chart.viindhyabullion.net.in";
+                            localStorage.chartPort = "2888";
+            
+                        localStorage.autocallIpAddress = "autocall.viindhyabullion.net.in";
+                            localStorage.autocallPort = "9000";
+
+                            localStorage.ratealertIpAddress = "ratealert.viindhyabullion.net.in";
+                            localStorage.ratealertPort = "8440";
+
+                            localStorage.newsIpAddress = "news.viindhyabullion.net.in";
+                            localStorage.newsPort = "9100";
+                                        
+                            
+                                    </script> -->
+	</body>
+
+<!-- Mirrored from viindhyabullion.net.in/www/ModiyDeleteOrders.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Jul 2024 09:09:23 GMT -->
+</html>

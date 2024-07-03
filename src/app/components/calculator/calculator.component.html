@@ -1,0 +1,672 @@
+<section class="section" style="padding: 0 !important;min-height:500px;">
+    <!-- <p style="background-color: #cb8e2a;color: #FFF;text-align: center;font-size: 18px;">Welcome to VIINDHYA BULLIONs</p> -->
+    <!-- <p style="color: #670220 ;text-align: center;font-size: 25px;font-weight:bold; margin-top: -25px;"> BANK DETAILS</p> -->
+    <p id="" class="headingTop">Jewellery Calculator</p>
+    <div class="container">
+        <div class="row" style="border: 1px solid #edcd68;background-color: rgba(40, 27 ,8 ,0.1);">
+            <div class="col-md-4 row" >
+
+                <div class="col-md-8 padNew1" style="width:75%;">
+                    <div style="padding-left: 12px">
+                        <img src="assets/img/appimages/Icon.png" alt="Rates" style="width:14px">
+                        <span class="jewellryHeader">FINE GOLD RATE</span><br>
+                        <span class="jewellryHeader">DISCOUNTED SHOWROOM GOLD RATES</span>
+                    </div>
+                    <div class="swiper-slide swiper-slideTrending">
+                        <table class="Trending_Table_Root" width="100%">
+                            <tr style="text-align: -webkit-center;">
+                                <td style="padding: 5px 0px;">
+                                    <table id="gvData2" class="color-white Trending_Table_Child2" style="width:90%"></table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-4 pt-4" style="width:25% ;">
+                    <nav class="navbar-expand-lg nav-bg-white">
+                        <div class="col-12 scroll-css text-center padNew2">
+                            <img src="assets/img/logo/logo1.png" style="width:70%;" />
+                            <h1 id="datetime" style="font-size: 0.8rem;font-weight:600;color: #edcd68;line-height: 1.7;text-align: center;margin-bottom: 0!important;display:block"></h1>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-md-4" style="background:#C7A251;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 padNew1">
+                            <form name="calcForm">
+                                <table class="calc" style="width: 100%; color: #FFF; padding: 0 10px!important;">
+                                    <tr>
+                                        <td colspan="5">
+                                            <span style="color: #000; font-size: 16px; font-weight: 700">Choose Your Carat Value
+                                                (K)</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input id="24Carat" class="carat bggg" type="button" name="btnAdd" value="24 K" onclick="javascript:carat24()" />
+                                        </td>
+                                        <td>
+                                            <input id="22Carat" class="carat bggg" type="button" name="btnSub" value="22 K" onclick="javascript:carat22()" />
+                                        </td>
+                                        <!--<td>
+                                            <input id="20Carat" class="carat bggg" type="button" name="btnSub" value="20 K" onclick="javascript:carat20()" />
+                                        </td>-->
+                                        <td>
+                                            <input id="18Carat" class="carat bggg" type="button" name="btnMul" value="18 K" onclick="javascript:carat18()">
+                                        </td>
+                                        <!--<td>
+                                            <input id="14Carat" class="carat bggg" type="button" name="btndiv" value="14 K" onclick="javascript:carat14()">
+                                        </td>-->
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5">
+                                            <span style="color: #000; font-size: 16px; font-weight: 700">Enter The Weight</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="calc" style="width: 100%; color: #FFF;">
+                                    <tr>
+                                        <td width="30%" style="display: none;">
+                                            <input id="screen_result" type="text" name="display2" placeholder="INR." style="text-align: center;
+                                                width: 100%; background: #FFFFFF !important; color: #000 !important; font-weight: 600;
+                                                padding: 10px; border-radius: 10px; height: 42px; border: 1px solid #c4c4c4;"
+                                                readonly />
+                                        </td>
+                                        <td width="60%">
+                                            <input id="screen_quantity" type="text" name="display2" placeholder="GRAMS" style="text-align: center;
+                                                width: 100%; background: #FFFFFF !important; color: #000 !important; font-weight: 600;
+                                                padding: 10px; border-radius: 10px; height: 42px; border: 2px solid #000000;" />
+                                        </td>
+                                        <td width="40%">
+                                            <input value="GRAMS" type="text" name="display2" placeholder="GRAMS" style="text-align: left;
+                                                width: 100%; background: transparent; color: #000 !important; font-weight: 600;
+                                                padding: 10px; border-radius: 10px; height: 42px; border: 0px solid #c4c4c4;"
+                                                readonly />
+                                            <!--id="screen_quantity2"-->
+                                            <!-- <select id="screen_quantity2" name="display" style="text-align: center;width: 100%;background:#FFFFFF !important;color:#000 !important;font-weight:600;padding: 0px;border-radius: 10px;height: 42px;border:1px solid #c4c4c4;" readonly>
+                                                    <option value="" disabled selected>Gram</option> -->
+                                            <!-- <option value="1">Gram</option>
+                                                    <option value="2">KG</option> -->
+                                            <!-- <option value="3">3 Gram</option>
+                                                    <option value="4">4 Gram</option>
+                                                    <option value="5">5 Gram</option>
+                                                    <option value="6">6 Gram</option>
+                                                    <option value="7">7 Gram</option>
+                                                    <option value="8">8 Gram</option>
+                                                    <option value="9">9 Gram</option>
+                                                    <option value="10">10 Gram</option> -->
+                                            <!-- </select> -->
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="calc" style="width: 100%; color: #FFF;">
+                                    <tr>
+                                        <td>
+                                            <span style="color: #000; font-size: 16px; font-weight: 700">Choose Your Product Making Charge</span>
+                                            <!--Enter Making Charges in %-->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="100%" style="padding: 0;">
+                                            <table style="width: 100%;">
+                                                <tr>
+                                                    <td width="60%">
+                                                        <!--<input id="screen_quantity2" value="10" type="number" name="display2" placeholder=""
+                                                            style="text-align: center; width: 100%; background: #FFFFFF !important; color: #000 !important;
+                                                            font-weight: 600; padding-left: 10px; border-radius: 10px; height: 42px; border: 2px solid #000;" />-->
+
+                                                            <select id="screen_quantity2" name="display" style="text-align: center;width: 100%;background:#FFFFFF !important;color:#000 !important;font-weight:600;padding: 0px;border-radius: 10px;height: 42px;border:1px solid #c4c4c4;text-transform: uppercase;" readonly>
+                                                            <option value="6">Regular - 6%</option>
+                                                            <option value="8">Classic - 8%</option> 
+                                                            <option value="10">Exclusive - 10%</option>
+                                                            <option value="14">Premium - 14%</option>
+                                                            </select>
+
+
+
+                                                    </td>
+                                                    <!--<td width="40%">
+                                                        <input value="%" type="text" name="display2" placeholder="" style="text-align: left;
+                                                            width: 100%; background: transparent; color: #000 !important; font-weight: 600;
+                                                            padding: 10px; border-radius: 10px; height: 42px; border: 0px solid #c4c4c4;"
+                                                            readonly="">
+                                                    </td>-->
+                                                </tr>
+                                            </table>
+                                            <!-- <select id="Making_Charges" name="display" style="text-align: left;width: 100%;background:#FFFFFF !important;color:#000 !important;font-weight:600;padding-left: 10px;border-radius: 10px;height: 42px;border:1px solid #c4c4c4;">
+                                                    <option value="" disabled selected>Select Option</option>
+                                                    <option value="1">NAWABI</option>
+                                                    <option value="2">LONG SET</option>
+                                                    <option value="3">GENTS RING</option>
+                                                    <option value="4">BANGLES</option>
+                                                    <option value="5">CHAINS</option> -->
+                                            <!-- <option value="6">20000</option> -->
+                                            <!-- <option value="1">100</option>
+                                                    <option value="2">500</option>
+                                                    <option value="3">1000</option>
+                                                    <option value="4">5000</option>
+                                                    <option value="5">10000</option>
+                                                    <option value="6">20000</option> -->
+                                            <!-- </select> -->
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="calc" style="width: 100%; color: #FFF;">
+                                    <tr>
+                                        <td width="50%">
+                                            <input type="button" name="btnClear" value="RESET" style="background-color: #281B08;
+                                                color: #fff; height: 52px; font-size: 14px; font-weight: 700" onclick="myFunction()">
+                                        </td>
+                                        <td width="50%">
+                                            <input type="button" value="CALCULATE" style="background-color: #281B08; color: #FFF;
+                                                height: 52px; font-size: 14px; font-weight: 700" onclick="showResult()">
+                                        </td>
+                                    </tr>
+                                </table>
+                                </form>
+                                <div class="swiper-slide swiper-slideTrending" style="display: none">
+                                    <table class="Trending_Table_Root" width="100%">
+                                        <tr>
+                                            <td style="padding: 0px 0px !important;">
+                                                <table id="gvData_top3" class="color-white Trending_Table_Child1" width="100%">
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr style="text-align: -webkit-center;">
+                                            <td style="padding: 15px 0px;">
+                                                <table id="gvData" class="color-white Trending_Table_Child2" style="width: 90%">
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <br />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <script>
+
+                                    function showResult() {
+
+
+
+
+                                        var screenResultValue = document.getElementById("screen_result").value;
+                                        var makingChargesValue = $("#Making_Charges option:selected").text();
+                                        //console.log(screenResultValue);
+
+                                        var bothaddition = parseInt(screenResultValue);
+                                        // var bothaddition = parseInt(makingChargesValue) + parseInt(screenResultValue);
+                                        // alert(bothaddition);
+
+                                        var bothaddition1 = bothaddition.toFixed(2);
+
+                                        // alert(bothaddition);
+
+                                        //document.getElementById("screen_result").val = bothaddition;
+                                        $('#screen_result').val(bothaddition1);
+                                        $('#screen_result2').val(bothaddition1);
+
+
+
+                                        var Result_Quantity = document.getElementById("screen_quantity").value;
+                                        //console.log("Result_Quantity" + Result_Quantity);
+                                        var Result_Quantity1 = parseFloat(Result_Quantity);
+                                        //console.log("Result_Quantity1" + Result_Quantity1);
+                                        // var bothaddition = parseInt(makingChargesValue) + parseInt(screenResultValue);
+                                        var bothMulplication = bothaddition * Result_Quantity1
+                                        //console.log("bothMulplication "+ bothMulplication);
+
+                                        var bothMulplication1 = parseInt(bothMulplication);
+                                        // var bothaddition = parseInt(makingChargesValue) + parseInt(screenResultValue);
+                                        // alert(bothaddition);
+
+                                        var bothMulplication2 = bothMulplication1.toFixed(2);
+
+
+
+
+                                        //#############################################
+                                        // GST Added to Amount Start #############################################
+                                        //#############################################
+                                        var GSTAmount = bothMulplication2;
+                                        var GSTAmountP = parseInt(GSTAmount) * 0.03;
+                                        //console.log(GSTAmountP);
+
+                                        //#############################################
+                                        // GST Added to Amount End #############################################
+                                        //#############################################
+
+
+                                        $('#screen_result3').val(parseInt(bothMulplication2));
+
+
+                                        var Result_Quantity2 = Result_Quantity1.toFixed(2) + " Grams";
+                                        $('#screen_quantity3').val(Result_Quantity2);
+
+
+                                        //###############################################################################
+                                        //###############################################################################
+                                        // Calculate Making Charge of 24KT Liverate Rates Only
+                                        var LiveRate_Rate_24KT = $('span#0').html();
+                                        var Quantity_24KT = $('#screen_quantity').val();
+                                        var _screen_textboxx_24KT = (((LiveRate_Rate_24KT)) * (24 / 24) / 10).toFixed(2);
+                                        var bothMulplication2_24Kt = parseInt(_screen_textboxx_24KT) * parseInt(Quantity_24KT);
+
+
+                                        var GSTAmount_24KT = bothMulplication2_24Kt;
+                                        var GSTAmountP_24KT = parseInt(GSTAmount_24KT) * 0.03;
+
+                                        //###############################################################################
+                                        //###############################################################################
+
+
+
+
+
+                                        //var making_percent = parseInt(bothMulplication2) * parseFloat(document.getElementById("screen_quantity2").value / 100);
+                                        //var making_percent = ((parseInt(bothMulplication2) + parseInt(GSTAmountP)) / document.getElementById("screen_quantity2").value);
+                                        //var making_percent = ((parseInt(bothMulplication2) + parseInt(GSTAmountP)) * (document.getElementById("screen_quantity2").value / 100));
+
+                                        var making_percent = ((parseInt(bothMulplication2_24Kt) ) * (document.getElementById("screen_quantity2").value / 100));
+
+
+
+                                        console.log("bothMulplication2 " + bothMulplication2_24Kt);
+                                        console.log("GSTAmountP " + GSTAmountP_24KT);
+                                        console.log("Mking Charge " + document.getElementById("screen_quantity2").value);
+
+                                        var making_Amount = document.getElementById("screen_quantity2").value + "% / ₹ " + "" + making_percent.toFixed(2);
+                                        //console.log(making_Amount);
+                                        $('#Making_percnet_Amount').val(making_Amount);
+
+                                        var Hallmark1 = "70";
+                                        var Hallmark2 = "₹ " + "" + "70";
+
+
+                                        // alert(Hallmark1);
+
+                                        $('#Hallmark').val(Hallmark2);
+
+
+                                        var Packing1 = "0";
+                                        var Packing2 = Packing1; //"₹ " + "" + 
+
+                                        $('#Packing_Charges').val(Packing2);
+
+
+                                    var GSTAmount = parseInt(making_percent) + parseInt(bothMulplication2) + parseInt(Hallmark1) + parseInt(Packing1);
+                                    // alert(GSTAmount);
+
+                                    var GSTAmountP = parseInt(GSTAmount) * 0.03;
+                                    var GSTAmount1 = "3% / ₹ " + "" + GSTAmountP.toFixed(2);
+
+                                    $('#GST_Amount').val(GSTAmount1);
+
+
+                                        var Final_AmountAdd = parseFloat(making_percent) + parseFloat(bothMulplication2) + parseFloat(Hallmark1) + parseFloat(Packing1) + parseInt(GSTAmountP);
+                                        sessionStorage.Final_AmountAdd1 = Final_AmountAdd.toFixed(2);
+                                        var Final_AmountAdd1 = "₹ " + "" + Final_AmountAdd.toFixed(2);
+                                        
+                                        $('#Final_Amount').val(Final_AmountAdd1);
+
+
+                                        if (bothMulplication2 !== "NaN") {
+                                            $('#tblResult').css("visibility", 'visible');
+                                        }
+                                        else {
+                                            alert("please Choose your Carat Value (K)");
+                                        }
+
+
+
+                                    }
+
+
+                                    function carat24() {
+                                        //alert("ID");
+                                        try {
+
+                                            //alert("1");
+                                            //             Add Class
+                                            $("#24Carat").addClass('bgColor_color');
+
+                                            //Remove Class
+                                            $('#22Carat').removeClass('bgColor_color');
+                                            $('#20Carat').removeClass('bgColor_color');
+                                            $('#14Carat').removeClass('bgColor_color');
+                                            //$('#21Carat').removeClass('bgColor_color');
+                                            $('#18Carat').removeClass('bgColor_color');
+
+
+                                            var LiveRate_Rate = $('span#0').html();
+                                            //alert(LiveRate_Rate);
+
+                                            var _screen_textboxx = "";
+                                            document.getElementById("screen_result").value = "";
+
+
+
+                                            var Quantity = $('#screen_quantity').val();
+                                            //alert(Quantity);
+
+                                            _screen_textboxx = (((LiveRate_Rate)) * (24 / 24) / 10).toFixed(2);
+
+                                            //  / 10
+                                            console.log("_screen_textboxx " + _screen_textboxx);
+                                            document.getElementById("screen_result").value = _screen_textboxx;
+
+
+                                        }
+                                        catch (e) {
+                                            //alert("CallWebServiceFromJquery " + e);
+                                        }
+
+                                    }
+
+
+                                    function carat22() {
+                                        //alert("ID");
+                                        try {
+
+
+                                            //Add Class
+                                            $("#22Carat").addClass('bgColor_color');
+
+                                            //Remove Class
+                                            $('#24Carat').removeClass('bgColor_color');
+                                            $('#20Carat').removeClass('bgColor_color');
+                                            $('#14Carat').removeClass('bgColor_color');
+                                            //$('#21Carat').removeClass('bgColor_color');
+                                            $('#18Carat').removeClass('bgColor_color');
+
+
+                                            var LiveRate_Rate = $('span#1').html();
+
+                                            var _screen_textboxx = "";
+                                            document.getElementById("screen_result").value = "";
+
+
+
+                                            var Quantity = $('#screen_quantity').val();
+                                            //alert(Quantity);
+
+                                            _screen_textboxx = (((LiveRate_Rate)) * (22 / 22) / 10).toFixed(2);
+                                            // _screen_textboxx = (((Quantity * LiveRate_Rate)) * (22 / 24) / 10).toFixed(2);
+                                            //alert(_screen_textboxx);
+                                            document.getElementById("screen_result").value = _screen_textboxx;
+                                        }
+                                        catch (e) {
+                                            //alert("CallWebServiceFromJquery " + e);
+                                        }
+
+                                    }
+
+
+                                    //                                        function carat20() {
+                                    //                                            //alert("ID");
+                                    //                                            try {
+
+
+                                    //                                                //Add Class
+                                    //                                                $("#20Carat").addClass('bgColor_color');
+
+                                    //                                                //Remove Class
+                                    //                                                $('#24Carat').removeClass('bgColor_color');
+                                    //                                                $('#22Carat').removeClass('bgColor_color');
+                                    //                                                $('#14Carat').removeClass('bgColor_color');
+                                    //                                                //$('#21Carat').removeClass('bgColor_color');
+                                    //                                                $('#18Carat').removeClass('bgColor_color');
+
+
+                                    //                                                var LiveRate_Rate = $('span#2').html();
+
+                                    //                                                var _screen_textboxx = "";
+                                    //                                                document.getElementById("screen_result").value = "";
+
+
+
+                                    //                                                var Quantity = $('#screen_quantity').val();
+                                    //                                                //alert(Quantity);
+
+                                    //                                                _screen_textboxx = (((LiveRate_Rate)) * (20 / 20) / 10).toFixed(2);
+                                    //                                                // _screen_textboxx = (((Quantity * LiveRate_Rate)) * (22 / 24) / 10).toFixed(2);
+                                    //                                                //alert(_screen_textboxx);
+                                    //                                                document.getElementById("screen_result").value = _screen_textboxx;
+                                    //                                            }
+                                    //                                            catch (e) {
+                                    //                                                //alert("CallWebServiceFromJquery " + e);
+                                    //                                            }
+
+                                    //                                        }
+
+                                    function carat18() {
+                                        //alert("ID");
+                                        try {
+
+                                            //Add Class
+                                            $("#18Carat").addClass('bgColor_color');
+
+                                            //Remove Class
+                                            $('#24Carat').removeClass('bgColor_color');
+                                            $('#22Carat').removeClass('bgColor_color');
+                                            $('#20Carat').removeClass('bgColor_color');
+                                            $('#21Carat').removeClass('bgColor_color');
+                                            $('#14Carat').removeClass('bgColor_color');
+
+                                            var LiveRate_Rate = $('span#2').html();
+                                            // alert(LiveRate_Rate);
+
+                                            var _screen_textboxx = "";
+                                            document.getElementById("screen_result").value = "";
+
+
+
+                                            var Quantity = $('#screen_quantity').val();
+                                            //alert(Quantity);
+
+                                            // _screen_textboxx = (((Quantity * LiveRate_Rate)) * (18 / 24) / 10).toFixed(2);
+                                            _screen_textboxx = (((LiveRate_Rate)) * (18 / 18) / 10).toFixed(2);
+                                            // alert(_screen_textboxx);
+                                            document.getElementById("screen_result").value = _screen_textboxx;
+
+                                        }
+                                        catch (e) {
+                                            //alert("CallWebServiceFromJquery " + e);
+                                        }
+
+                                    }
+
+                                    //                                        function carat14() {
+                                    //                                            //alert("ID");
+                                    //                                            try {
+
+
+                                    //                                                //Add Class
+                                    //                                                $("#14Carat").addClass('bgColor_color');
+
+                                    //                                                //Remove Class
+                                    //                                                $('#24Carat').removeClass('bgColor_color');
+                                    //                                                $('#22Carat').removeClass('bgColor_color');
+                                    //                                                $('#20Carat').removeClass('bgColor_color');
+                                    //                                                $('#18Carat').removeClass('bgColor_color');
+
+                                    //                                                var LiveRate_Rate = $('span#4').html();
+
+                                    //                                                var _screen_textboxx = "";
+                                    //                                                document.getElementById("screen_result").value = "";
+
+
+
+                                    //                                                var Quantity = $('#screen_quantity').val();
+                                    //                                                //alert(Quantity);
+
+                                    //                                                _screen_textboxx = (((LiveRate_Rate)) * (14 / 14) / 10).toFixed(2);
+                                    //                                                // _screen_textboxx = (((Quants
+                                    //                                                document.getElementById("screen_result").value = _screen_textboxx;
+                                    //                                                // alert(_screen_textboxx);
+
+
+                                    //                                            }
+                                    //                                            catch (e) {
+                                    //                                                //alert("CallWebServiceFromJquery " + e);
+                                    //                                            }
+
+                                    //                                        }
+
+
+
+
+                                    function myFunction() {
+                                        //alert("ID " + ID);
+                                        try {
+
+                                            // alert("1");
+                                            location.reload();
+                                            calcForm.display.value = calcForm.display2.value = '';
+                                            document.getElementById("screen_result3").value = "";
+
+
+                                            //Remove Class
+                                            $('#24Carat').removeClass('bgColor_color');
+                                            $('#22Carat').removeClass('bgColor_color');
+                                            $("#14Carat").removeClass('bgColor_color');
+                                            $("#21Carat").removeClass('bgColor_color');
+                                            $('#18Carat').removeClass('bgColor_color');
+                                            $('#tblResult').css("visibility", 'collapse');
+
+
+
+
+                                        }
+                                        catch (e) {
+                                            //alert("CallWebServiceFromJquery " + e);
+                                        }
+
+                                    }
+                                </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" style="border: 1px solid #edcd68;">
+                <table class="Bill_table" style="color: #fff; width: 96%; visibility: collapse; font-weight: 600;"
+            id="tblResult">
+
+            <tr>
+                <td style="width: 50%;">
+                    Gross Weight:
+                </td>
+                <td align="left" style="width: 50%;">
+                    <table style="width:100%;">
+                        <tr>
+                            <td style="width:50%;">
+                                <input id="Text1" type="text" value="0" name="display5" style="text-align: right;
+                                width: 100%; color: #000 !important; font-weight: 600; padding: 10px; border-radius: 0px;
+                                padding: 10px; border-radius: 0px; height: 35px; background-color: transparent;
+                                border: 2px solid #f2f2f2; background: #FFF;" />
+                            </td>
+                            <td style="width:50%;">
+                                <input id="Text2" type="text" value="GRM" name="display5" style="text-align: center;
+                                width: 60%; color: #000 !important; font-weight: 600; padding: 10px; border-radius: 0px;
+                                padding: 1px; border-radius: 0px; height: 35px; background-color: transparent;
+                                border: 2px solid #f2f2f2; background: #FFF;font-size: 10px;" readonly />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width: 50%;">
+                    Net Weight:
+                </td>
+                <td align="left" style="width: 50%;">
+                    <input id="screen_quantity3" type="text" name="display5" style="text-align: right;
+                        width: 80%; color: #000 !important; font-weight: 600; padding: 10px; border-radius: 0px;
+                        height: 35px; background-color: transparent; border: 2px solid #f2f2f2; background: #FFF;" readonly />
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width: 50%;">
+                    Gold Weight Amount:
+                </td>
+                <td align="left" style="width: 50%;">
+                    <input id="screen_result3" type="text" name="display5" style="text-align: right;
+                        width: 80%; color: #000 !important; font-weight: 600; padding: 10px; border-radius: 0px;
+                        padding: 10px; border-radius: 0px; height: 35px; background-color: transparent;
+                        border: 2px solid #f2f2f2; background: #FFF;" readonly />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%;">
+                    Making Charges:
+                </td>
+                <td align="left" style="width: 50%;">
+                    <input id="Making_percnet_Amount" type="text" name="display5" style="text-align: right;
+                        width: 80%; color: #000 !important; font-weight: 600; padding: 10px; border-radius: 0px;
+                        padding: 10px; border-radius: 0px; height: 35px; background-color: transparent;
+                        border: 2px solid #f2f2f2; background: #FFF;" readonly />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%;">
+                    Hallmarking:
+                </td>
+                <td align="left" style="width: 50%;">
+                    <input id="Hallmark" type="text" name="display5" style="text-align: right; width: 80%;
+                        color: #000 !important; font-weight: 600; padding: 10px; border-radius: 0px;
+                        padding: 10px; border-radius: 0px; height: 35px; background-color: transparent;
+                        border: 2px solid #f2f2f2;background: #FFF;" readonly />
+                </td>
+            </tr>
+            <!-- <tr>
+                <td style="width: 50%;">
+                    Other Charges
+                </td>
+                <td align="left" style="width: 50%;">
+                    <input id="Packing_Charges" type="text" value="0" name="display5" style="text-align: right;
+                        width: 80%; color: #000 !important; font-weight: 600; padding: 10px; border-radius: 0px;
+                        padding: 10px; border-radius: 0px; height: 35px; background-color: transparent;
+                        border: 2px solid #f2f2f2; background-image: url(assets/img/appimages/Box_02.png); background-repeat: no-repeat;
+                        background-size: 100% 100%; background: #FFF;" onkeyup="OtherCharges()" />
+                </td>
+            </tr> -->
+            <tr>
+                <td style="width: 50%;">
+                    GST
+                </td>
+                <td align="left" style="width: 50%;">
+                    <input id="GST_Amount" type="text" name="display5" style="text-align: right; width: 80%;
+                        color: #000 !important; font-weight: 600; padding: 10px; border-radius: 0px;
+                        padding: 10px; border-radius: 0px; height: 35px; background-color: transparent;
+                        border: 2px solid #f2f2f2;background: #FFF;" readonly />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%;">
+                    Final Amount
+                    <!--(GST + Making + Packing)-->
+                    <td style="width: 50%;">
+                        <input id="Final_Amount" type="text" name="display5" style="text-align: right; width: 80%;
+                            color: #000 !important; font-weight: 700; padding: 10px; border-radius: 0px;
+                            padding: 10px; border-radius: 0px; height: 45px; font-size: 125%; background-color: transparent;
+                            border: 2px solid #f2f2f2;background: #FFF;" readonly />
+                    </td>
+            </tr>
+        </table>
+            </div>
+            
+            
+        </div>
+    </div>
+</section>
