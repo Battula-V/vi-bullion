@@ -10,7 +10,7 @@
           "style": "scss"
         }
       },
-      "root": "",
+      "root": "", 
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
@@ -32,9 +32,24 @@
             "styles": [
               "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss",
-              "node_modules/ngx-toastr/toastr.css"
+              "node_modules/ngx-toastr/toastr.css",
+              "src/assets/css/normalize.min.css",
+              "src/assets/css/swiper.min.css", 
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/vendor/font-awesome/css/fontawesome-all.min.css",
+              "src/assets/vendor/animate/animate.min.css",
+              "src/assets/vendor/linear-icons/css/linear-icons.min.css",
+              "src/assets/vendor/owl.carousel/assets/owl.carousel.min.css",
+              "src/assets/vendor/owl.carousel/assets/owl.theme.default.min.css",
+              "src/assets/vendor/magnific-popup/magnific-popup.min.css",
+              "src/assets/css/theme.css",
+              "src/assets/css/theme-elements.css",
+              "src/assets/css/skins/default.css",
+              "src/assets/css/custom.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/vendor/modernizr/modernizr.min.js"
+            ]
           },
           "configurations": {
             "production": {
