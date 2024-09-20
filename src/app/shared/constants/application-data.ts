@@ -1,3 +1,3 @@
-export const ROUTES :any ={
+export const Routes : any = {
     LOGIN : "/login"
 }
